@@ -1,0 +1,1 @@
+$i=1; foreach($line in [System.IO.File]::ReadLines("c:\Users\ayan\Desktop\ACI\aayan-cotton.html")) { if($line -match "Sister Concern|CASTA|ORTHO|NUTRAMED|PAKCARE|product-card|product-grid|PRODUCTS") { Write-Output $i }; $i++ }
