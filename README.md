@@ -1,5 +1,9 @@
 # Aayan Cotton Industries — Company Website
 
+**[Live demo →](https://aayansheraz.github.io/aayan-cotton/)**
+
+![Aayan Cotton Industries screenshot](.github/screenshot.png)
+
 Marketing website for Aayan Cotton Industries (Okara, Punjab, Pakistan) — a manufacturer of medical/surgical cotton products (gauze, bandages, scrub suits, patient gowns, and related items).
 
 Static HTML site, no build step required.
