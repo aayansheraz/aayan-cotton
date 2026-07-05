@@ -1,0 +1,5 @@
+# AI tool local state (not project code, don't commit)
+
+# Editor/OS
+.DS_Store
+Thumbs.db
