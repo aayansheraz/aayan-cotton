@@ -3293,6 +3293,125 @@ body .map-tab-btn.active {
   background: #1a6b3c !important;
 }
 
+
+    /* Master Mobile Layout & Centered Modal Alignment Fixes */
+    .nav-mobile-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-left: auto;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        height: 60px !important;
+        padding: 0 16px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      .logo {
+        margin-right: auto !important;
+      }
+
+      .logo-img {
+        height: 48px !important;
+        max-width: 170px !important;
+        object-fit: contain !important;
+      }
+
+      .nav-mobile-actions {
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+        margin-left: auto !important;
+      }
+
+      .theme-toggle {
+        width: 38px !important;
+        height: 38px !important;
+        font-size: 16px !important;
+        margin: 0 !important;
+      }
+
+      .menu-btn {
+        width: 38px !important;
+        height: 38px !important;
+        margin: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+      }
+
+      /* Perfect Centered Modal Alignment for Mobile Screens */
+      #product-modal,
+      .cert-modal {
+        position: fixed !important;
+        inset: 0 !important;
+        z-index: 100000 !important;
+        padding: 12px !important;
+        display: none;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        box-sizing: border-box !important;
+      }
+
+      #product-modal.open,
+      .cert-modal.open {
+        display: flex !important;
+      }
+
+      .modal-box,
+      .cert-modal-box {
+        width: 100% !important;
+        max-width: 92vw !important;
+        margin: auto !important;
+        border-radius: 20px !important;
+        max-height: 86vh !important;
+        box-sizing: border-box !important;
+        transform: none !important;
+        left: 0 !important;
+        right: 0 !important;
+      }
+
+      .modal-header {
+        padding: 24px 20px 18px !important;
+        border-radius: 20px 20px 0 0 !important;
+      }
+
+      .modal-body {
+        padding: 20px 16px !important;
+      }
+    }
+
+    /* Vibrant Brightness and Color Consistency */
+    :root {
+      --cream: #ffffff;
+      --green-soft: #edf9f2;
+    }
+
+    body {
+      background: #ffffff !important;
+    }
+
+    .hero-overlay {
+      background: linear-gradient(180deg, rgba(13, 43, 26, 0.25) 0%, rgba(13, 43, 26, 0.45) 100%) !important;
+    }
+
+    .hero h1 {
+      text-shadow: 0 3px 12px rgba(0, 0, 0, 0.3) !important;
+    }
+
+    .hero p {
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25) !important;
+    }
+
 </style>
   <link rel="preload" href="fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="fonts.css"></noscript>
@@ -3343,11 +3462,13 @@ body .map-tab-btn.active {
       <li><a href="#contact">Contact Us</a></li>
       <li><a href="#contact" class="nav-cta">Get In Touch</a></li>
     </ul>
-    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch theme"
-      title="Switch theme">☾</button>
-    <button class="menu-btn" id="menuBtn">
-      <span></span><span></span><span></span>
-    </button>
+
+    <div class="nav-mobile-actions">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch theme" title="Switch theme">☾</button>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle Navigation Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
   <div class="nav-drawer-overlay" id="navDrawerOverlay"></div>
 
