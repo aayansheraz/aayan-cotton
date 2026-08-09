@@ -2,16 +2,21 @@
 
 > Aayan Cotton Industries (ACI) is Pakistan's premier medical devices and absorbent & non-absorbent cotton wool rolls manufacturer since 2000. Exporting to 20+ countries worldwide.
 
+- [Home](https://aayan-cotton.vercel.app/#home)
+- [About Us](https://aayan-cotton.vercel.app/#about)
+- [Products](https://aayan-cotton.vercel.app/#products)
+- [Certificates](https://aayan-cotton.vercel.app/#certificates)
+- [Contact Us](https://aayan-cotton.vercel.app/#contact)
+
 ## Overview
 Aayan Cotton Industries (ACI) is an ISO 9001:2015, ISO 13485:2016, CE, and GMP certified medical devices manufacturer located in Depalpur Road, Okara, Punjab, Pakistan.
 
 ## Key Products & Specialties
-- Absorbent Cotton Wool Rolls
-- Non-Absorbent Cotton Wool Rolls
-- Orthopedic Undercast Padding (Ortho Cure, Casto Ban, Ortho Comfort, Ortho Soft)
-- Surgical Dressings & Gauze Swabs
-- Industrial Cotton Slivers & Disposable Medical Clothing
+- [Absorbent Cotton Wool Rolls](https://aayan-cotton.vercel.app/#products)
+- [Non-Absorbent Cotton Wool Rolls](https://aayan-cotton.vercel.app/#products)
+- [Orthopedic Undercast Padding](https://aayan-cotton.vercel.app/#products)
+- [Surgical Dressings & Gauze Swabs](https://aayan-cotton.vercel.app/#products)
 
 ## Company Details
 - Location: Depalpur Road, Okara, Punjab, Pakistan
-- Official Website: https://aayan-cotton.vercel.app/
+- Official Website: [Aayan Cotton Industries](https://aayan-cotton.vercel.app/)
