@@ -1,4 +1,9 @@
 {
+  "cleanUrls": false,
+  "rewrites": [
+    { "source": "/robots.txt", "destination": "/robots.txt" },
+    { "source": "/llms.txt", "destination": "/llms.txt" }
+  ],
   "headers": [
     {
       "source": "/(.*)",
