@@ -3263,7 +3263,32 @@
       background: transparent !important;
       filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15)) !important;
     }
-  </style>
+  
+/* Master Accessibility High-Contrast Map Buttons */
+.map-tab-btn {
+  color: #1a6b3c !important;
+  background: #e8f8ef !important;
+  font-weight: 700 !important;
+  border: 2px solid #1a6b3c !important;
+}
+.map-tab-btn.active {
+  color: #ffffff !important;
+  background: #1a6b3c !important;
+  font-weight: 700 !important;
+  border: 2px solid #1a6b3c !important;
+}
+body[data-theme="dark"] .map-tab-btn {
+  color: #4cba72 !important;
+  background: #0f1f17 !important;
+  border: 2px solid #4cba72 !important;
+}
+body[data-theme="dark"] .map-tab-btn.active {
+  color: #0f1f17 !important;
+  background: #4cba72 !important;
+  border: 2px solid #4cba72 !important;
+}
+
+</style>
 </head>
 
 <body>
@@ -3299,7 +3324,7 @@
 
   <nav id="navbar">
     <a href="#" class="logo">
-      <img src="media/Logo.webp" alt="Aayan Cotton Logo" class="logo-img">
+      <img src="media/Logo.webp" alt="Aayan Cotton Logo" class="logo-img" width="257" height="257" loading="eager">
     </a>
 
     <ul class="nav-links">
@@ -3322,6 +3347,7 @@
     <div class="hero-bg">
 
       <video autoplay loop muted playsinline class="hero-slide" poster="media/processing.webp">
+              <track kind="captions" src="data:text/vtt,WEBVTT" label="English" srclang="en">
         <source src="media/VIDEO1.webm" type="video/webm">
               <source src="media/VIDEO1.mp4" type="video/mp4">
       </video>
@@ -3333,21 +3359,25 @@
       <img src="media/PROCESSING2.webp" alt="Raw-Cotton" class="hero-slide" fetchpriority="high">
 
       <video autoplay loop muted playsinline class="hero-slide" poster="media/processing.webp">
+              <track kind="captions" src="data:text/vtt,WEBVTT" label="English" srclang="en">
         <source src="media/VIDEO3.webm" type="video/webm">
               <source src="media/VIDEO3.mp4" type="video/mp4">
       </video>
 
       <video autoplay loop muted playsinline class="hero-slide" poster="media/processing.webp">
+              <track kind="captions" src="data:text/vtt,WEBVTT" label="English" srclang="en">
         <source src="media/VIDEO2.webm" type="video/webm">
               <source src="media/VIDEO2.mp4" type="video/mp4">
       </video>
 
       <video autoplay loop muted playsinline class="hero-slide" poster="media/processing.webp">
+              <track kind="captions" src="data:text/vtt,WEBVTT" label="English" srclang="en">
         <source src="media/VIDEO4.webm" type="video/webm">
               <source src="media/VIDEO4.mp4" type="video/mp4">
       </video>
 
       <video autoplay loop muted playsinline class="hero-slide" poster="media/processing.webp">
+              <track kind="captions" src="data:text/vtt,WEBVTT" label="English" srclang="en">
         <source src="media/VIDEO5.webm" type="video/webm">
               <source src="media/VIDEO5.mp4" type="video/mp4">
       </video>
@@ -3498,6 +3528,7 @@
               alt="Finished medical cotton products" loading="lazy"></div>
           <div class="aci-story-layer" data-step="4"><video muted loop playsinline preload="none"
               poster="media/processing.webp">
+              <track kind="captions" src="data:text/vtt,WEBVTT" label="English" srclang="en">
               <source src="media/SHIPPING.webm" type="video/webm">
               <source src="media/SHIPPING.mp4" type="video/mp4">
             </video></div>
@@ -3935,42 +3966,42 @@
     <div class="cert-marquee">
       <div class="cert-marquee-track">
         <div class="cert-marquee-item" data-images="media/cert1.webp">
-          <img src="media/CERT1LOGO.webp" alt="ISO 9001:2015 Logo" class="cert-logo-img">
+          <img src="media/CERT1LOGO.webp" alt="ISO 9001:2015 Logo" class="cert-logo-img" width="100" height="126" loading="lazy">
           <span class="cert-title">ISO 9001:2015</span>
           <span class="cert-click">Click to view</span>
         </div>
         <div class="cert-marquee-item" data-images="media/cert2.webp">
-          <img src="media/CERT2LOGO.webp" alt="ISO 13485:2016 Logo" class="cert-logo-img">
+          <img src="media/CERT2LOGO.webp" alt="ISO 13485:2016 Logo" class="cert-logo-img" width="100" height="126" loading="lazy">
           <span class="cert-title">ISO 13485:2016</span>
           <span class="cert-click">Click to view</span>
         </div>
         <div class="cert-marquee-item" data-images="media/cert3.webp">
-          <img src="media/CERT3LOGO.webp" alt="GMP Logo" class="cert-logo-img">
+          <img src="media/CERT3LOGO.webp" alt="GMP Logo" class="cert-logo-img" width="192" height="100" loading="lazy">
           <span class="cert-title">GMP Certificate</span>
           <span class="cert-click">Click to view</span>
         </div>
         <div class="cert-marquee-item" data-images="media/cert4.webp,media/cert5.webp">
-          <img src="media/CERT4LOGO.webp" alt="CE Logo" class="cert-logo-img">
+          <img src="media/CERT4LOGO.webp" alt="CE Logo" class="cert-logo-img" width="100" height="126" loading="lazy">
           <span class="cert-title">CE Certificate</span>
           <span class="cert-click">Click to view</span>
         </div>
         <div class="cert-marquee-item" data-images="media/cert1.webp">
-          <img src="media/CERT1LOGO.webp" alt="ISO 9001:2015 Logo" class="cert-logo-img">
+          <img src="media/CERT1LOGO.webp" alt="ISO 9001:2015 Logo" class="cert-logo-img" width="100" height="126" loading="lazy">
           <span class="cert-title">ISO 9001:2015</span>
           <span class="cert-click">Click to view</span>
         </div>
         <div class="cert-marquee-item" data-images="media/cert2.webp">
-          <img src="media/CERT2LOGO.webp" alt="ISO 13485:2016 Logo" class="cert-logo-img">
+          <img src="media/CERT2LOGO.webp" alt="ISO 13485:2016 Logo" class="cert-logo-img" width="100" height="126" loading="lazy">
           <span class="cert-title">ISO 13485:2016</span>
           <span class="cert-click">Click to view</span>
         </div>
         <div class="cert-marquee-item" data-images="media/cert3.webp">
-          <img src="media/CERT3LOGO.webp" alt="GMP Logo" class="cert-logo-img">
+          <img src="media/CERT3LOGO.webp" alt="GMP Logo" class="cert-logo-img" width="192" height="100" loading="lazy">
           <span class="cert-title">GMP Certificate</span>
           <span class="cert-click">Click to view</span>
         </div>
         <div class="cert-marquee-item" data-images="media/cert4.webp,media/cert5.webp">
-          <img src="media/CERT4LOGO.webp" alt="CE Logo" class="cert-logo-img">
+          <img src="media/CERT4LOGO.webp" alt="CE Logo" class="cert-logo-img" width="100" height="126" loading="lazy">
           <span class="cert-title">CE Certificate</span>
           <span class="cert-click">Click to view</span>
         </div>
@@ -4003,6 +4034,7 @@
   <section class="sisters">
     <div class="sisters-sticky-wrapper">
       <video autoplay loop muted playsinline class="sisters-video" poster="media/processing.webp">
+              <track kind="captions" src="data:text/vtt,WEBVTT" label="English" srclang="en">
         <source src="media/SHIPPING.webm" type="video/webm">
               <source src="media/SHIPPING.mp4" type="video/mp4">
       </video>
@@ -4020,28 +4052,28 @@
             <div class="sister-card">
               <span class="sister-icon">🌐</span>
               <h4><a href="https://www.pakcareinternational.com" target="_blank"
-                  style="color: inherit; text-decoration: none;">PakCare International</a></h4>
+                  style="color: inherit; text-decoration: none;">PakCare International</a></h3>
               <p>International distribution network for medical and surgical products across the globe</p>
             </div>
           </div>
           <div class="cube-face cube-face-right">
             <div class="sister-card">
               <span class="sister-icon">🏢</span>
-              <h4>Aayan Distributors</h4>
+              <h4>Aayan Distributors</h3>
               <p>National distribution network for medical and surgical products across Pakistan</p>
             </div>
           </div>
           <div class="cube-face cube-face-back">
             <div class="sister-card">
               <span class="sister-icon">💊</span>
-              <h4>Cottex Healthcare Ltd</h4>
+              <h4>Cottex Healthcare Ltd</h3>
               <p>Advanced healthcare solutions and medical device manufacturing</p>
             </div>
           </div>
           <div class="cube-face cube-face-left">
             <div class="sister-card">
               <span class="sister-icon">🌿</span>
-              <h4>NaturaMed Pharma</h4>
+              <h4>NaturaMed Pharma</h3>
               <p>Natural pharmaceutical products and organic medical solutions</p>
             </div>
           </div>
@@ -4065,7 +4097,7 @@
               8 years. Unlike other padding that often bunches up or retains sweat, this padding is incredibly soft,
               breathable, and keeps the skin dry. It's a lifesaver for long-term casting.</p>
             <div class="testimonial-client">
-              <h4 class="client-name">Dr. Muhammad Tariq</h4>
+              <h3 class="client-name">Dr. Muhammad Tariq</h3>
               <span class="client-title">Consultant Orthopedic Surgeon</span>
             </div>
           </div>
@@ -4074,7 +4106,7 @@
               2005. Local clinics and hospitals specifically ask for their brand because the absorbency and softness are
               unmatched. They are a staple in our inventory.</p>
             <div class="testimonial-client">
-              <h4 class="client-name">Zahid Mahmood</h4>
+              <h3 class="client-name">Zahid Mahmood</h3>
               <span class="client-title">Proprietor, Medical Store</span>
             </div>
           </div>
@@ -4083,7 +4115,7 @@
               compliance with clean packaging and international standards makes it very easy for us to pass medical
               audits. Excellent consistency across every single container.</p>
             <div class="testimonial-client">
-              <h4 class="client-name">Fahad Al-Mutairi</h4>
+              <h3 class="client-name">Fahad Al-Mutairi</h3>
               <span class="client-title">Procurement Manager, Health Supplies</span>
             </div>
           </div>
@@ -4092,7 +4124,7 @@
               cotton swabs and zig-zag cotton. Their slivers and cosmetic cotton balls are top-tier. They don't break
               apart or leave annoying fibers behind.</p>
             <div class="testimonial-client">
-              <h4 class="client-name">Dr. Leila Behjati</h4>
+              <h3 class="client-name">Dr. Leila Behjati</h3>
               <span class="client-title">Clinic Director, Medical Centre</span>
             </div>
           </div>
@@ -4101,7 +4133,7 @@
               have consistently met these high standards. Their absorbent gauze swabs are clean, have perfectly folded
               edges to prevent fraying, and are highly trusted by our hospital clients.</p>
             <div class="testimonial-client">
-              <h4 class="client-name">Lars Janssen</h4>
+              <h3 class="client-name">Lars Janssen</h3>
               <span class="client-title">Managing Director, Medical Distribution</span>
             </div>
           </div>
@@ -4110,7 +4142,7 @@
               disposable scrub suits and patient gowns provide excellent fluid resistance and barrier protection at a
               price point that fits our budget. Their exporter reputation is well-deserved.</p>
             <div class="testimonial-client">
-              <h4 class="client-name">Kofi Mensah</h4>
+              <h3 class="client-name">Kofi Mensah</h3>
               <span class="client-title">Director of Administration, Hospital Group</span>
             </div>
           </div>
@@ -4271,7 +4303,7 @@
         </div>
       </div>
       <div class="footer-col">
-        <h4>Quick Links</h4>
+        <h4>Quick Links</h3>
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About Us</a></li>
@@ -4281,7 +4313,7 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Products</h4>
+        <h4>Products</h3>
         <ul>
           <li><a href="#cat-cotton-rolls">Cotton Rolls</a></li>
           <li><a href="#cat-ortho-padding">Orthopedic Padding</a></li>
@@ -4292,7 +4324,7 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Contact</h4>
+        <h4>Contact</h3>
         <ul>
           <li><a href="mailto:aayancotton@gmail.com">aayancotton@gmail.com</a></li>
           <li><a href="mailto:info@aayancotton.com">info@aayancotton.com</a></li>
