@@ -3412,6 +3412,238 @@ body .map-tab-btn.active {
       text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25) !important;
     }
 
+
+/* ==========================================================================
+   MASTER MOBILE RESPONSIVE & ALIGNMENT OVERHAUL (PERFECT ON ALL SCREENS)
+   ========================================================================== */
+
+/* 1. Prevent Horizontal Page Overflow on Mobile (Fix White Right Strip) */
+html, body {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box !important;
+}
+
+/* 2. Fixed Viewport Position for Floating Action Buttons (Scroll-Top & WhatsApp) */
+.scroll-top-btn,
+#scrollTopBtn {
+  position: fixed !important;
+  bottom: 20px !important;
+  left: 16px !important;
+  z-index: 99990 !important;
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25) !important;
+}
+
+.whatsapp-float,
+#contactWhatsappFloat,
+.whatsapp-link {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 16px !important;
+  z-index: 99990 !important;
+  width: 46px !important;
+  height: 46px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 4px 16px rgba(0,200,83,0.35) !important;
+}
+
+/* 3. Header & Navigation Mobile Fix (Scroll & Back-Scroll Consistency) */
+@media (max-width: 768px) {
+  .topbar {
+    height: 36px !important;
+    font-size: 11px !important;
+    padding: 0 10px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  nav#navbar {
+    position: fixed !important;
+    top: 36px !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    height: 60px !important;
+    padding: 0 16px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    box-sizing: border-box !important;
+    z-index: 9999 !important;
+  }
+
+  nav#navbar.scrolled {
+    top: 0 !important;
+    background: rgba(255, 255, 255, 0.96) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-bottom: 1px solid rgba(26, 107, 60, 0.15) !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06) !important;
+  }
+
+  body[data-theme="dark"] nav#navbar.scrolled {
+    background: rgba(15, 31, 23, 0.96) !important;
+    border-bottom-color: rgba(76, 186, 114, 0.2) !important;
+  }
+
+  .logo {
+    margin-right: auto !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .logo-img {
+    height: 44px !important;
+    max-width: 160px !important;
+    object-fit: contain !important;
+  }
+
+  .nav-mobile-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    margin-left: auto !important;
+  }
+
+  .theme-toggle {
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 16px !important;
+    margin: 0 !important;
+    flex-shrink: 0 !important;
+  }
+
+  .menu-btn {
+    width: 38px !important;
+    height: 38px !important;
+    margin: 0 !important;
+    flex-shrink: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+}
+
+/* 4. Product Modal Perfect Viewport Centering on Mobile */
+@media (max-width: 768px) {
+  #product-modal,
+  .cert-modal {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    display: none;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 12px !important;
+    z-index: 100000 !important;
+    box-sizing: border-box !important;
+    background: rgba(10, 30, 18, 0.75) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+  }
+
+  #product-modal.open,
+  .cert-modal.open {
+    display: flex !important;
+  }
+
+  .modal-box,
+  .cert-modal-box {
+    position: relative !important;
+    width: 100% !important;
+    max-width: calc(100vw - 24px) !important;
+    margin: auto !important;
+    max-height: 84vh !important;
+    border-radius: 20px !important;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45) !important;
+    overflow-y: auto !important;
+    box-sizing: border-box !important;
+    transform: none !important;
+    left: 0 !important;
+    right: 0 !important;
+  }
+
+  .modal-header {
+    padding: 24px 20px 18px !important;
+    border-radius: 20px 20px 0 0 !important;
+  }
+
+  .modal-body {
+    padding: 20px 16px !important;
+  }
+}
+
+/* 5. Product Cards Text Contrast & Alignment on Mobile */
+.product-card {
+  position: relative !important;
+  overflow: hidden !important;
+  border-radius: 18px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.product-card-info,
+.product-info {
+  position: absolute !important;
+  top: 16px !important;
+  left: 16px !important;
+  z-index: 5 !important;
+}
+
+.product-card h3,
+.product-title {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.75), 0 1px 3px rgba(0,0,0,0.9) !important;
+  margin-bottom: 6px !important;
+}
+
+.product-tag {
+  background: rgba(26, 107, 60, 0.85) !important;
+  color: #ffffff !important;
+  backdrop-filter: blur(4px) !important;
+  padding: 4px 12px !important;
+  border-radius: 12px !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+}
+
+/* 6. Section Container Max-Width & Padding Sanity */
+section, footer, .footer-inner, .about-inner, .products-inner, .certificates-inner, .contact-inner {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 768px) {
+  .about, .products, .certificates, .testimonials, .contact, footer {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
 </style>
   <link rel="preload" href="fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="fonts.css"></noscript>
