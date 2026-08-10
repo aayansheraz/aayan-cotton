@@ -3416,12 +3416,10 @@ body .map-tab-btn.active {
 
 /* 1. Prevent Horizontal Page Overflow on Mobile (Fix White Right Strip) */
 html, body {
-  width: 100% !important;
-  max-width: 100% !important;
-  overflow-x: hidden !important;
-  position: relative !important;
-  margin: 0 !important;
-  padding: 0 !important;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
 }
 
 *, *::before, *::after {
@@ -3939,6 +3937,73 @@ section, footer, .footer-inner, .about-inner, .products-inner, .certificates-inn
     font-size: 12.5px !important;
     line-height: 1.5 !important;
   }
+}
+
+
+/* ==========================================================================
+   STICKY SCROLL PINNING FIX (SCROLL STORY & SISTER CONCERNS 3D CUBE)
+   ========================================================================== */
+
+/* Enable native sticky pinning on document root */
+html, body {
+  overflow-x: clip !important;
+  overflow-y: visible !important;
+}
+
+/* Ensure no parent wrapper breaks position: sticky context */
+header, nav, main, section, .hero, .about, .vision-mission, .products, .certificates, .testimonials, .contact, footer {
+  overflow: visible !important;
+}
+
+/* Scroll Story Sticky Track & Stage */
+.aci-story {
+  position: relative !important;
+  background: #0c1f16 !important;
+  width: 100% !important;
+}
+
+.aci-story-track {
+  position: relative !important;
+  height: 450vh !important;
+  width: 100% !important;
+}
+
+.aci-story-stage {
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: 0 !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: flex-end !important;
+  justify-content: flex-start !important;
+  box-sizing: border-box !important;
+  z-index: 10 !important;
+}
+
+/* Sister Concerns Sticky Track & 3D Cube Wrapper */
+.sisters {
+  position: relative !important;
+  height: 260vh !important;
+  min-height: 260vh !important;
+  width: 100% !important;
+  background: transparent !important;
+}
+
+.sisters-sticky-wrapper {
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: 0 !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+  z-index: 10 !important;
 }
 
 </style>
