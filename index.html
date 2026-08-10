@@ -4251,6 +4251,271 @@ header, nav, main, section, .hero, .about, .vision-mission, .products, .certific
   transform: none !important;
 }
 
+
+/* Hover-Only Shiny Sheen for Product Category Buttons */
+.category-title {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.category-title:hover,
+.category-title:focus-visible {
+  background: linear-gradient(135deg, rgba(45, 155, 87, 0.18) 0%, rgba(26, 107, 60, 0.28) 100%) !important;
+  box-shadow: 0 4px 20px rgba(26, 107, 60, 0.25) !important;
+  border-bottom-color: var(--green-mid) !important;
+}
+
+.category-title::after {
+  content: '↓';
+  font-size: 16px;
+  float: right;
+  transition: transform 0.3s ease;
+}
+
+.product-category.is-open .category-title::after {
+  transform: rotate(180deg);
+}
+
+.product-category:not(.is-open) .products-grid {
+  display: none !important;
+}
+
+.product-category.is-open .products-grid {
+  display: grid !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Desktop Navbar Alignment (Logo on Left, Nav Links Center/Right, Theme Toggle & CTA Far Right) */
+@media (min-width: 769px) {
+  nav#navbar {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0 48px !important;
+    height: 80px !important;
+  }
+
+  nav#navbar .logo {
+    margin-right: auto !important;
+  }
+
+  nav#navbar .nav-links {
+    display: flex !important;
+    align-items: center !important;
+    gap: 28px !important;
+    margin: 0 24px 0 auto !important;
+    list-style: none !important;
+  }
+
+  nav#navbar .nav-mobile-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 16px !important;
+    margin-left: 12px !important;
+  }
+
+  nav#navbar .menu-btn {
+    display: none !important;
+  }
+}
+
+/* WhatsApp Contact Button Fix (Unsquish inline form button) */
+#contactWhatsapp,
+.form-submit.whatsapp-link,
+a.whatsapp-link:not(#contactWhatsappFloat):not(.whatsapp-float) {
+  position: relative !important;
+  bottom: auto !important;
+  right: auto !important;
+  width: auto !important;
+  height: auto !important;
+  min-width: 180px !important;
+  padding: 13px 30px !important;
+  border-radius: 30px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  color: white !important;
+  background: #25d366 !important;
+  box-shadow: 0 4px 18px rgba(37, 211, 102, 0.35) !important;
+  text-decoration: none !important;
+  z-index: 10 !important;
+}
+
+#contactWhatsapp:hover,
+.form-submit.whatsapp-link:hover {
+  background: #1ebe5d !important;
+  transform: translateY(-2px) !important;
+}
+
+/* ==========================================================================
+   AESTHETIC JUNCTION HAMBURGER MENU & DRAWER CLONE (LUXURY PHYSICS)
+   ========================================================================== */
+
+/* Asymmetrical 3-line Hamburger Button */
+.menu-btn {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-end !important;
+  justify-content: center !important;
+  gap: 5px !important;
+  width: 42px !important;
+  height: 42px !important;
+  padding: 0 8px !important;
+  border-radius: 50% !important;
+  background: rgba(26, 107, 60, 0.12) !important;
+  border: 1.5px solid rgba(26, 107, 60, 0.25) !important;
+  cursor: pointer !important;
+  transition: all 0.3s cubic-bezier(0.76, 0, 0.24, 1) !important;
+  z-index: 1002 !important;
+}
+
+body[data-theme="dark"] .menu-btn {
+  background: rgba(76, 186, 114, 0.15) !important;
+  border-color: rgba(76, 186, 114, 0.3) !important;
+}
+
+.menu-btn span {
+  display: block !important;
+  height: 2px !important;
+  background: var(--green-deep) !important;
+  border-radius: 2px !important;
+  transition: all 0.35s cubic-bezier(0.76, 0, 0.24, 1) !important;
+}
+
+body[data-theme="dark"] .menu-btn span {
+  background: white !important;
+}
+
+/* Staggered Line Widths (Aesthetic Junction Signature) */
+.menu-btn span.bar-top,
+.menu-btn span:nth-child(1) {
+  width: 22px !important;
+}
+
+.menu-btn span.bar-mid,
+.menu-btn span:nth-child(2) {
+  width: 15px !important;
+}
+
+.menu-btn span.bar-bot,
+.menu-btn span:nth-child(3) {
+  width: 19px !important;
+}
+
+/* Open Morphing State ("X" Transformation) */
+.menu-btn.active {
+  background: var(--green-deep) !important;
+  border-color: var(--green-deep) !important;
+  box-shadow: 0 6px 20px rgba(26, 107, 60, 0.35) !important;
+}
+
+.menu-btn.active span {
+  background: white !important;
+}
+
+.menu-btn.active span.bar-top,
+.menu-btn.active span:nth-child(1) {
+  width: 22px !important;
+  transform: translateY(7px) rotate(45deg) !important;
+}
+
+.menu-btn.active span.bar-mid,
+.menu-btn.active span:nth-child(2) {
+  width: 0 !important;
+  opacity: 0 !important;
+}
+
+.menu-btn.active span.bar-bot,
+.menu-btn.active span:nth-child(3) {
+  width: 22px !important;
+  transform: translateY(-7px) rotate(-45deg) !important;
+}
+
+/* Mobile Slide-Out Drawer Panel (Aesthetic Junction Clone) */
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    width: 84vw !important;
+    max-width: 360px !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    background: #0f1f17 !important;
+    border-left: 1px solid rgba(76, 186, 114, 0.25) !important;
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    padding: 80px 36px 40px !important;
+    gap: 22px !important;
+    transform: translateX(100%) !important;
+    transition: transform 0.45s cubic-bezier(0.76, 0, 0.24, 1) !important;
+    z-index: 1000 !important;
+  }
+
+  .nav-links.open {
+    transform: translateX(0) !important;
+  }
+
+  .nav-links li {
+    width: 100% !important;
+    opacity: 0 !important;
+    transform: translateX(24px) !important;
+    transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.76, 0, 0.24, 1) !important;
+  }
+
+  .nav-links.open li {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+  }
+
+  /* Cascading Staggered Delays for Menu Items */
+  .nav-links.open li:nth-child(1) { transition-delay: 90ms !important; }
+  .nav-links.open li:nth-child(2) { transition-delay: 140ms !important; }
+  .nav-links.open li:nth-child(3) { transition-delay: 190ms !important; }
+  .nav-links.open li:nth-child(4) { transition-delay: 240ms !important; }
+  .nav-links.open li:nth-child(5) { transition-delay: 290ms !important; }
+  .nav-links.open li:nth-child(6) { transition-delay: 340ms !important; }
+
+  .nav-links a {
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    color: white !important;
+    text-decoration: none !important;
+    display: block !important;
+    transition: color 0.2s !important;
+  }
+
+  .nav-links a:hover {
+    color: var(--green-light) !important;
+  }
+
+  /* Backdrop Glass Blur Overlay */
+  .nav-backdrop {
+    position: fixed !important;
+    inset: 0 !important;
+    background: rgba(0, 0, 0, 0.55) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: opacity 0.4s ease !important;
+    z-index: 999 !important;
+  }
+
+  .nav-backdrop.open {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+}
+
 </style>
   <link rel="preload" href="fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="fonts.css"></noscript>
@@ -4304,11 +4569,12 @@ header, nav, main, section, .hero, .about, .vision-mission, .products, .certific
 
     <div class="nav-mobile-actions">
       <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch theme" title="Switch theme">☾</button>
-      <button class="menu-btn" id="menuBtn" aria-label="Toggle Navigation Menu">
-        <span></span><span></span><span></span>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle Navigation Menu" type="button">
+        <span class="bar-top"></span><span class="bar-mid"></span><span class="bar-bot"></span>
       </button>
     </div>
   </nav>
+  <div class="nav-backdrop" id="navBackdrop"></div>
   <div class="nav-drawer-overlay" id="navDrawerOverlay"></div>
 
   <section class="hero" id="home">
@@ -8193,6 +8459,42 @@ header, nav, main, section, .hero, .about, .vision-mission, .products, .certific
     })();
   </script>
 
+<script>
+    (function initAestheticHamburger() {
+      const menuBtn = document.getElementById('menuBtn');
+      const navLinks = document.querySelector('.nav-links');
+      const backdrop = document.getElementById('navBackdrop');
+      if (!menuBtn || !navLinks) return;
+
+      function toggleMenu(open) {
+        const isOpen = typeof open === 'boolean' ? open : !menuBtn.classList.contains('active');
+        menuBtn.classList.toggle('active', isOpen);
+        navLinks.classList.toggle('open', isOpen);
+        if (backdrop) backdrop.classList.toggle('open', isOpen);
+
+        // Body Scroll Lock
+        if (isOpen) {
+          document.body.style.overflow = 'hidden';
+        } else {
+          document.body.style.overflow = '';
+        }
+      }
+
+      menuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleMenu();
+      });
+
+      if (backdrop) {
+        backdrop.addEventListener('click', () => toggleMenu(false));
+      }
+
+      // Close menu when clicking links
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => toggleMenu(false));
+      });
+    })();
+  </script>
 </body>
 
 </html>
