@@ -5511,6 +5511,67 @@ body.in-footer-section #scrollTop {
   }
 }
 
+
+/* ==========================================================================
+   MOBILE LIGHTHOUSE 100/100 PERFORMANCE & ACCESSIBILITY MASTER RULES
+   ========================================================================== */
+
+/* High-Contrast Section Tags & Subtext for 100/100 Accessibility Contrast */
+.section-tag {
+  color: #12542e !important;
+  background: rgba(26, 107, 60, 0.15) !important;
+  font-weight: 700 !important;
+}
+
+.product-tag {
+  color: #12542e !important;
+  font-weight: 700 !important;
+}
+
+/* GPU-Composited Animations to Eliminate 18.2s Main-Thread Work & 1,060ms TBT */
+@keyframes btnGlow {
+  0%, 100% {
+    transform: scale(1) translateZ(0);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.035) translateZ(0);
+    opacity: 0.94;
+  }
+}
+
+.nav-cta,
+#contactForm .form-submit,
+.form-submit {
+  animation: btnGlow 3s infinite ease-in-out !important;
+  will-change: transform, opacity !important;
+}
+
+/* Composited Reveal Animations */
+.reveal {
+  will-change: transform, opacity !important;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease !important;
+}
+
+/* Composited Story Tick Animation */
+.aci-story-tick {
+  will-change: transform, background !important;
+  transition: transform 0.4s ease, background 0.4s ease !important;
+}
+
+.aci-story-tick.is-active {
+  transform: scaleX(1.35) !important;
+}
+
+/* Hardware Acceleration Hints for Mobile Smoothness */
+.product-card,
+.uiverse-journey-card,
+.sister-card,
+.cert-marquee-item {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
 </style>
   <link rel="preload" href="fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="fonts.css"></noscript>
@@ -5550,7 +5611,7 @@ body.in-footer-section #scrollTop {
 
   <nav id="navbar">
     <a href="#" class="logo">
-      <img src="media/Logo.webp" alt="Aayan Cotton Logo" class="logo-img">
+      <img src="media/Logo.webp" width="225" height="225" alt="Aayan Cotton Logo" class="logo-img">
     </a>
 
     <ul class="nav-links">
@@ -5570,6 +5631,7 @@ body.in-footer-section #scrollTop {
       </button>
     </div>
   </nav>
+  <main id="main-content">
 
   <!-- Aesthetic Junction Mobile Menu Overlay & Slide Drawer -->
   <div class="mobile-menu-overlay" id="mobileMenuOverlay">
@@ -5595,43 +5657,43 @@ body.in-footer-section #scrollTop {
   <section class="hero" id="home">
     <div class="hero-bg">
 
-      <video preload="metadata" autoplay loop muted playsinline class="hero-slide" poster="media/processing.webp">
+      <video preload="none" autoplay loop muted playsinline class="hero-slide" poster="media/processing.webp">
               <track kind="captions" src="data:text/vtt,WEBVTT" label="English" srclang="en">
         <source src="media/VIDEO1.webm" type="video/webm">
               <source src="media/VIDEO1.mp4" type="video/mp4">
       </video>
 
-      <img src="media/PROCESSING1.webp" alt="Processing Raw Cotton" class="hero-slide" fetchpriority="high">
+      <img src="media/PROCESSING1.webp" width="800" height="600" alt="Processing Raw Cotton" class="hero-slide" fetchpriority="high">
 
-      <img src="media/PROCESSING3.webp" alt="Carded Cotton Processing" class="hero-slide" fetchpriority="high">
+      <img src="media/PROCESSING3.webp" width="800" height="600" alt="Carded Cotton Processing" class="hero-slide" fetchpriority="high">
 
-      <img src="media/PROCESSING2.webp" alt="Raw-Cotton" class="hero-slide" fetchpriority="high">
+      <img src="media/PROCESSING2.webp" width="800" height="600" alt="Raw-Cotton" class="hero-slide" fetchpriority="high">
 
-      <video preload="metadata" autoplay loop muted playsinline class="hero-slide" poster="media/processing.webp">
+      <video preload="none" autoplay loop muted playsinline class="hero-slide" poster="media/processing.webp">
               <track kind="captions" src="data:text/vtt,WEBVTT" label="English" srclang="en">
         <source src="media/VIDEO3.webm" type="video/webm">
               <source src="media/VIDEO3.mp4" type="video/mp4">
       </video>
 
-      <video preload="metadata" autoplay loop muted playsinline class="hero-slide" poster="media/processing.webp">
+      <video preload="none" autoplay loop muted playsinline class="hero-slide" poster="media/processing.webp">
               <track kind="captions" src="data:text/vtt,WEBVTT" label="English" srclang="en">
         <source src="media/VIDEO2.webm" type="video/webm">
               <source src="media/VIDEO2.mp4" type="video/mp4">
       </video>
 
-      <video preload="metadata" autoplay loop muted playsinline class="hero-slide" poster="media/processing.webp">
+      <video preload="none" autoplay loop muted playsinline class="hero-slide" poster="media/processing.webp">
               <track kind="captions" src="data:text/vtt,WEBVTT" label="English" srclang="en">
         <source src="media/VIDEO4.webm" type="video/webm">
               <source src="media/VIDEO4.mp4" type="video/mp4">
       </video>
 
-      <video preload="metadata" autoplay loop muted playsinline class="hero-slide" poster="media/processing.webp">
+      <video preload="none" autoplay loop muted playsinline class="hero-slide" poster="media/processing.webp">
               <track kind="captions" src="data:text/vtt,WEBVTT" label="English" srclang="en">
         <source src="media/VIDEO5.webm" type="video/webm">
               <source src="media/VIDEO5.mp4" type="video/mp4">
       </video>
 
-      <img src="media/COLLECTIVE PRODUCTS.webp" alt="Collective Products" class="hero-slide" fetchpriority="high">
+      <img src="media/COLLECTIVE PRODUCTS.webp" width="800" height="600" alt="Collective Products" class="hero-slide" fetchpriority="high">
 
       <div class="hero-overlay"></div>
     </div>
@@ -5678,7 +5740,7 @@ body.in-footer-section #scrollTop {
       <div class="about-visual reveal">
         <div class="founder-section">
           <div class="founder-image-container">
-            <img src="media/Founder.webp" alt="Founder" id="founder-img">
+            <img src="media/Founder.webp" width="592" height="444" alt="Founder" id="founder-img">
           </div>
           <div class="founder-name" id="founder-name">Dr. Muhammad Asghar (Late)</div>
           <div class="founder-title">Founder & Visionary</div>
@@ -5766,13 +5828,13 @@ body.in-footer-section #scrollTop {
           <span class="indicator-text">SCROLL TO EXPLORE</span>
         </div>
         <div class="aci-story-media">
-          <div class="aci-story-layer is-active" data-step="0"><img src="media/STORYLINE1.webp" alt="Hand-selected premium cotton fibre arriving from farms"
+          <div class="aci-story-layer is-active" data-step="0"><img src="media/STORYLINE1.webp" width="800" height="600" alt="Hand-selected premium cotton fibre arriving from farms"
               loading="lazy"></div>
-          <div class="aci-story-layer" data-step="1"><img src="media/PROCESSING2.webp" alt="Cotton carding and cleaning"
+          <div class="aci-story-layer" data-step="1"><img src="media/PROCESSING2.webp" width="800" height="600" alt="Cotton carding and cleaning"
               loading="lazy"></div>
-          <div class="aci-story-layer" data-step="2"><img src="media/PROCESSING3.webp" alt="Precision cotton rolling"
+          <div class="aci-story-layer" data-step="2"><img src="media/PROCESSING3.webp" width="800" height="600" alt="Precision cotton rolling"
               loading="lazy"></div>
-          <div class="aci-story-layer" data-step="3"><img src="media/COLLECTIVE PRODUCTS.webp"
+          <div class="aci-story-layer" data-step="3"><img src="media/COLLECTIVE PRODUCTS.webp" width="800" height="600"
               alt="Finished medical cotton products" loading="lazy"></div>
           <div class="aci-story-layer" data-step="4"><video muted loop playsinline preload="none"
               poster="media/processing.webp">
@@ -6200,42 +6262,42 @@ body.in-footer-section #scrollTop {
     <div class="cert-marquee">
       <div class="cert-marquee-track">
         <div class="cert-marquee-item" data-images="media/cert1.webp">
-          <img src="media/CERT1LOGO.webp" alt="ISO 9001:2015 Logo" class="cert-logo-img">
+          <img src="media/CERT1LOGO.webp" width="400" height="504" alt="ISO 9001:2015 Logo" class="cert-logo-img">
           <span class="cert-title">ISO 9001:2015</span>
           <span class="cert-click">Click to view</span>
         </div>
         <div class="cert-marquee-item" data-images="media/cert2.webp">
-          <img src="media/CERT2LOGO.webp" alt="ISO 13485:2016 Logo" class="cert-logo-img">
+          <img src="media/CERT2LOGO.webp" width="400" height="504" alt="ISO 13485:2016 Logo" class="cert-logo-img">
           <span class="cert-title">ISO 13485:2016</span>
           <span class="cert-click">Click to view</span>
         </div>
         <div class="cert-marquee-item" data-images="media/cert3.webp">
-          <img src="media/CERT3LOGO.webp" alt="GMP Logo" class="cert-logo-img">
+          <img src="media/CERT3LOGO.webp" width="500" height="261" alt="GMP Logo" class="cert-logo-img">
           <span class="cert-title">GMP Certificate</span>
           <span class="cert-click">Click to view</span>
         </div>
         <div class="cert-marquee-item" data-images="media/cert4.webp,media/cert5.webp">
-          <img src="media/CERT4LOGO.webp" alt="CE Logo" class="cert-logo-img">
+          <img src="media/CERT4LOGO.webp" width="400" height="504" alt="CE Logo" class="cert-logo-img">
           <span class="cert-title">CE Certificate</span>
           <span class="cert-click">Click to view</span>
         </div>
         <div class="cert-marquee-item" data-images="media/cert1.webp">
-          <img src="media/CERT1LOGO.webp" alt="ISO 9001:2015 Logo" class="cert-logo-img">
+          <img src="media/CERT1LOGO.webp" width="400" height="504" alt="ISO 9001:2015 Logo" class="cert-logo-img">
           <span class="cert-title">ISO 9001:2015</span>
           <span class="cert-click">Click to view</span>
         </div>
         <div class="cert-marquee-item" data-images="media/cert2.webp">
-          <img src="media/CERT2LOGO.webp" alt="ISO 13485:2016 Logo" class="cert-logo-img">
+          <img src="media/CERT2LOGO.webp" width="400" height="504" alt="ISO 13485:2016 Logo" class="cert-logo-img">
           <span class="cert-title">ISO 13485:2016</span>
           <span class="cert-click">Click to view</span>
         </div>
         <div class="cert-marquee-item" data-images="media/cert3.webp">
-          <img src="media/CERT3LOGO.webp" alt="GMP Logo" class="cert-logo-img">
+          <img src="media/CERT3LOGO.webp" width="500" height="261" alt="GMP Logo" class="cert-logo-img">
           <span class="cert-title">GMP Certificate</span>
           <span class="cert-click">Click to view</span>
         </div>
         <div class="cert-marquee-item" data-images="media/cert4.webp,media/cert5.webp">
-          <img src="media/CERT4LOGO.webp" alt="CE Logo" class="cert-logo-img">
+          <img src="media/CERT4LOGO.webp" width="400" height="504" alt="CE Logo" class="cert-logo-img">
           <span class="cert-title">CE Certificate</span>
           <span class="cert-click">Click to view</span>
         </div>
@@ -6267,7 +6329,7 @@ body.in-footer-section #scrollTop {
 
   <section class="sisters">
     <div class="sisters-sticky-wrapper">
-      <video preload="metadata" autoplay loop muted playsinline class="sisters-video" poster="media/processing.webp">
+      <video preload="none" autoplay loop muted playsinline class="sisters-video" poster="media/processing.webp">
               <track kind="captions" src="data:text/vtt,WEBVTT" label="English" srclang="en">
         <source src="media/SHIPPING.webm" type="video/webm">
               <source src="media/SHIPPING.mp4" type="video/mp4">
@@ -6398,7 +6460,7 @@ body.in-footer-section #scrollTop {
                 d="M9.9 19c-3.1 0-5.6-2.5-5.6-5.6 0-3 1.9-5.6 4.6-6.6l1 1.9C7.8 9.5 6.7 10.9 6.7 12.4h3.2v6.6zm10 0c-3.1 0-5.6-2.5-5.6-5.6 0-3 1.9-5.6 4.6-6.6l1 1.9c-2.1.8-3.2 2.2-3.2 3.7h3.2v6.6z" />
             </svg>
           </div>
-          <img src="media/Logo.webp" alt="Aayan Cotton Logo" class="graphic-logo">
+          <img src="media/Logo.webp" width="225" height="225" alt="Aayan Cotton Logo" class="graphic-logo">
         </div>
       </div>
     </div>
@@ -6501,6 +6563,8 @@ body.in-footer-section #scrollTop {
       </div>
     </div>
   </section>
+
+  </main>
 
   <footer>
     <div class="footer-grid">
