@@ -1,0 +1,8 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home3/aayanco1/public_html
+    - /bin/cp index.html $DEPLOYPATH/index.html
+    - /bin/cp fonts.css $DEPLOYPATH/fonts.css
+    - /bin/cp -R fonts $DEPLOYPATH/
+    - /bin/cp -R media $DEPLOYPATH/
