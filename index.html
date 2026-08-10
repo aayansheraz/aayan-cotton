@@ -4231,6 +4231,26 @@ header, nav, main, section, .hero, .about, .vision-mission, .products, .certific
   transform: none !important;
 }
 
+
+/* Remove background circle overlay behind products/achievements */
+.achievements::before,
+.achievements::after {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+}
+
+/* Clean working Product Category Accordion CSS */
+.product-category:not(.is-open) .products-grid {
+  display: none !important;
+}
+
+.product-category.is-open .products-grid {
+  display: grid !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
 </style>
   <link rel="preload" href="fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="fonts.css"></noscript>
@@ -4677,9 +4697,6 @@ header, nav, main, section, .hero, .about, .vision-mission, .products, .certific
       .aci-story-stage {
         align-items: flex-end;
       }
-    }
-
-    
 
       .aci-story-layer {
         position: absolute;
@@ -4730,13 +4747,7 @@ header, nav, main, section, .hero, .about, .vision-mission, .products, .certific
     #contactForm .form-submit {
       animation: btnGlow 2.5s infinite;
     }
-  
-body .map-tab-btn.active {
-  color: #ffffff !important;
-  background: #1a6b3c !important;
-}
-
-</style>
+  </style>
 
   <section class="products" id="products">
     <div class="products-inner">
@@ -4997,28 +5008,28 @@ body .map-tab-btn.active {
             <div class="sister-card">
               <span class="sister-icon">🌐</span>
               <h4><a href="https://www.pakcareinternational.com" target="_blank"
-                  style="color: inherit; text-decoration: none;">PakCare International</a></h3>
+                  style="color: inherit; text-decoration: none;">PakCare International</a></h4>
               <p>International distribution network for medical and surgical products across the globe</p>
             </div>
           </div>
           <div class="cube-face cube-face-right">
             <div class="sister-card">
               <span class="sister-icon">🏢</span>
-              <h4>Aayan Distributors</h3>
+              <h4>Aayan Distributors</h4>
               <p>National distribution network for medical and surgical products across Pakistan</p>
             </div>
           </div>
           <div class="cube-face cube-face-back">
             <div class="sister-card">
               <span class="sister-icon">💊</span>
-              <h4>Cottex Healthcare Ltd</h3>
+              <h4>Cottex Healthcare Ltd</h4>
               <p>Advanced healthcare solutions and medical device manufacturing</p>
             </div>
           </div>
           <div class="cube-face cube-face-left">
             <div class="sister-card">
               <span class="sister-icon">🌿</span>
-              <h4>NaturaMed Pharma</h3>
+              <h4>NaturaMed Pharma</h4>
               <p>Natural pharmaceutical products and organic medical solutions</p>
             </div>
           </div>
@@ -5181,7 +5192,7 @@ body .map-tab-btn.active {
           <div class="form-group">
             <label>Product Interest</label>
             <label for="contactProduct" class="sr-only">Product of Interest</label>
-            <select id="contactProduct" aria-label="Select Product of Interest" name="product" aria-label="Product of Interest" required>
+            <select id="contactProduct" name="product" aria-label="Select Product of Interest" required>
               <option value="">Select a product</option>
               <option>Absorbent Cotton Wool Roll</option>
               <option>Non-Absorbent Cotton Wool Roll</option>
@@ -5248,7 +5259,7 @@ body .map-tab-btn.active {
         </div>
       </div>
       <div class="footer-col">
-        <h4>Quick Links</h3>
+        <h4>Quick Links</h4>
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About Us</a></li>
@@ -5258,7 +5269,7 @@ body .map-tab-btn.active {
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Products</h3>
+        <h4>Products</h4>
         <ul>
           <li><a href="#cat-cotton-rolls">Cotton Rolls</a></li>
           <li><a href="#cat-ortho-padding">Orthopedic Padding</a></li>
@@ -5269,7 +5280,7 @@ body .map-tab-btn.active {
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Contact</h3>
+        <h4>Contact</h4>
         <ul>
           <li><a href="mailto:aayancotton@gmail.com">aayancotton@gmail.com</a></li>
           <li><a href="mailto:info@aayancotton.com">info@aayancotton.com</a></li>
@@ -5293,9 +5304,9 @@ body .map-tab-btn.active {
       </div>
       <div class="footer-map-wrapper"
         style="width: 100%; border-radius: 16px; overflow: hidden; border: 2.5px solid var(--green-pale); box-shadow: 0 8px 30px rgba(0,0,0,0.25); background: white;">
-        <iframe id="footerMapIframe" loading="lazy" title="Aayan Cotton Industries Map Location" title="Aayan Cotton Industries Office Map Location" title="Aayan Cotton Industries Okara Factory Location Map"
+        <iframe id="footerMapIframe" loading="lazy" title="Aayan Cotton Industries Okara Factory Location Map"
           src="https://maps.google.com/maps?q=Aayan%20Cotton%20Industries,%20Depalpur%20Road,%20Okara,%20Punjab,%20Pakistan&t=&z=15&ie=UTF8&iwloc=&output=embed"
-          width="100%" height="320" style="border: 0; display: block; width: 100%;" allowfullscreen="" loading="lazy"
+          width="100%" height="320" style="border: 0; display: block; width: 100%;" allowfullscreen=""
           referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
@@ -5897,13 +5908,7 @@ body .map-tab-btn.active {
     #contactForm .form-submit {
       animation: btnGlow 2.5s infinite;
     }
-  
-body .map-tab-btn.active {
-  color: #ffffff !important;
-  background: #1a6b3c !important;
-}
-
-</style>
+  </style>
 
   <div id="scroll-progress"></div>
 
@@ -7098,13 +7103,7 @@ body .map-tab-btn.active {
     #contactForm .form-submit {
       animation: btnGlow 2.5s infinite;
     }
-  
-body .map-tab-btn.active {
-  color: #ffffff !important;
-  background: #1a6b3c !important;
-}
-
-</style>
+  </style>
 
   <div id="product-modal">
     <div class="modal-backdrop" onclick="closeModal()"></div>
@@ -8074,13 +8073,7 @@ body .map-tab-btn.active {
     #contactForm .form-submit {
       animation: btnGlow 2.5s infinite;
     }
-  
-body .map-tab-btn.active {
-  color: #ffffff !important;
-  background: #1a6b3c !important;
-}
-
-</style>
+  </style>
   <script>
     (function () {
       var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
