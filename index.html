@@ -5495,6 +5495,22 @@ body.in-footer-section #scrollTop {
   transition: opacity 0.35s ease, transform 0.35s ease !important;
 }
 
+
+/* Shift Scroll Badge Lower so it never touches top navbar */
+.aci-story-scroll-indicator {
+  top: 84px !important;
+  right: 48px !important;
+  bottom: auto !important;
+}
+
+@media (max-width: 768px) {
+  .aci-story-scroll-indicator {
+    top: 72px !important;
+    right: 20px !important;
+    bottom: auto !important;
+  }
+}
+
 </style>
   <link rel="preload" href="fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="fonts.css"></noscript>
@@ -6270,8 +6286,7 @@ body.in-footer-section #scrollTop {
           <div class="cube-face cube-face-front">
             <div class="sister-card">
               <span class="sister-icon">🌐</span>
-              <h4><a href="" target="_blank"
-                  style="color: inherit; text-decoration: none;">PakCare International</a></h4>
+              <h4>PakCare International</h4>
               <p>International distribution network for medical and surgical products across the globe</p>
             </div>
           </div>
