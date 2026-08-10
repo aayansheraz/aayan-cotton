@@ -971,10 +971,7 @@
       transform: rotate(225deg);
     }
 
-    .product-category:not(.is-open) .products-grid,
-    .products-grid[hidden] {
-      /* display: none; is removed to support smooth slide transitions */
-    }
+    /* Note: display: none is removed on .product-category:not(.is-open) .products-grid to support smooth slide transitions */
 
     body[data-theme="dark"] .category-title {
       color: white;
@@ -3843,6 +3840,104 @@ section, footer, .footer-inner, .about-inner, .products-inner, .certificates-inn
   }
   .aci-story-tick.is-active {
     width: 48px !important;
+  }
+}
+
+
+/* ==========================================================================
+   SISTER CONCERNS 3D CUBE SCROLL & SCROLL STORY PERFECT RESPONSIVE OVERHAUL
+   ========================================================================== */
+
+/* 1. Sister Concerns 3D Cube Sticky Pin & Rotation Fix */
+.sisters {
+  position: relative !important;
+  height: 260vh !important;
+  min-height: 260vh !important;
+  width: 100% !important;
+  background: transparent !important;
+  overflow: visible !important;
+  padding: 0 !important;
+}
+
+.sisters-sticky-wrapper {
+  position: sticky !important;
+  top: 0 !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --cube-width: 82vw !important;
+    --cube-height: 220px !important;
+  }
+
+  .sisters {
+    height: 260vh !important;
+    min-height: 260vh !important;
+    max-height: none !important;
+    aspect-ratio: auto !important;
+    overflow: visible !important;
+  }
+
+  .sisters-sticky-wrapper {
+    position: sticky !important;
+    top: 0 !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    padding: 0 16px !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .sisters .section-header {
+    text-align: center !important;
+    margin-bottom: 20px !important;
+  }
+
+  .sisters .section-header .divider {
+    margin: 8px auto 0 !important;
+  }
+
+  .cube-container {
+    width: var(--cube-width) !important;
+    height: var(--cube-height) !important;
+    margin: 0 auto !important;
+    perspective: 1000px !important;
+  }
+
+  .cube {
+    width: 100% !important;
+    height: 100% !important;
+    position: relative !important;
+    transform-style: preserve-3d !important;
+  }
+
+  .sister-card {
+    border-radius: 16px !important;
+    padding: 20px 16px !important;
+  }
+
+  .sister-icon {
+    font-size: 28px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .sister-card h4 {
+    font-size: 16px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .sister-card p {
+    font-size: 12.5px !important;
+    line-height: 1.5 !important;
   }
 }
 
