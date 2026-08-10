@@ -4552,38 +4552,7 @@ body.menu-open .menu-btn {
   transform: translateY(-6px) !important;
 }
 
-/* 2. Luxury Glassmorphic Sister Concerns Section Header */
-.sisters .section-header {
-  background: rgba(255, 255, 255, 0.95) !important;
-  backdrop-filter: blur(16px) !important;
-  -webkit-backdrop-filter: blur(16px) !important;
-  padding: 22px 48px !important;
-  border-radius: 60px !important;
-  display: inline-block !important;
-  margin: 0 auto 44px !important;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
-  border: 1.5px solid rgba(200, 240, 216, 0.6) !important;
-  position: relative !important;
-  z-index: 10 !important;
-}
-
-.sisters .section-header h2 {
-  color: var(--green-deep) !important;
-  font-size: 36px !important;
-  margin-bottom: 0 !important;
-  text-shadow: none !important;
-}
-
-.sisters .section-tag {
-  background: var(--green-soft) !important;
-  color: var(--green-deep) !important;
-  font-weight: 700 !important;
-  margin-bottom: 8px !important;
-}
-
-.sisters .section-header .divider {
-  display: none !important;
-}
+/* Sister Concerns Heading matches all other section headers */
 
 /* 3. Center-Aligned Desktop Nav & Strictly NO Underline on Get In Touch */
 @media (min-width: 769px) {
@@ -4828,6 +4797,163 @@ a.nav-cta::after {
   color: var(--text-light, #5a8a6e) !important;
   text-transform: uppercase !important;
   letter-spacing: 0.08em !important;
+}
+
+
+/* ==========================================================================
+   ACI USER REQUESTS: COLOR INVERSION, ZERO CARD CLIPPING, CATEGORY CARD ANIMATION
+   ========================================================================== */
+
+/* 1. Uiverse.io Card Hover Color Inversion (Green <-> White) */
+.uiverse-journey-card {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  max-width: 520px !important;
+  padding: 3px !important;
+  border-radius: 24px !important;
+  overflow: hidden !important;
+  line-height: 1.6 !important;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1) !important;
+  background: transparent !important;
+  margin: 0 auto 24px !important;
+  border: none !important;
+  box-shadow: 0 10px 30px rgba(26, 107, 60, 0.1) !important;
+}
+
+/* Outer Rotating Beam (Pauses on idle, spins on hover) */
+.uiverse-journey-card::before {
+  content: "" !important;
+  position: absolute !important;
+  height: 180% !important;
+  width: 180% !important;
+  border-radius: inherit !important;
+  background: linear-gradient(90deg, #1a6b3c, #2d9b57, #4cba72, #00c853, #1a6b3c) !important;
+  transform-origin: center !important;
+  animation: moving 4.8s linear infinite paused !important;
+  transition: all 0.88s cubic-bezier(0.23, 1, 0.32, 1) !important;
+  z-index: 0 !important;
+}
+
+.uiverse-journey-card:hover::before {
+  animation-play-state: running !important;
+  width: 180% !important;
+}
+
+/* Inner Content Box (Default: White background, Green text) */
+.uiverse-journey-content {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  gap: 16px !important;
+  padding: 36px 30px !important;
+  border-radius: 22px !important;
+  background: #ffffff !important;
+  color: var(--text-dark, #0d2b1a) !important;
+  overflow: hidden !important;
+  width: 100% !important;
+  z-index: 1 !important;
+  transition: background 0.45s ease, color 0.45s ease, transform 0.45s ease !important;
+  position: relative !important;
+}
+
+/* HOVER COLOR INVERSION (Inverts to Deep Green background with Crisp White text) */
+.uiverse-journey-card:hover .uiverse-journey-content {
+  background: #1a6b3c !important;
+  color: #ffffff !important;
+}
+
+.uiverse-journey-card:hover .journey-heading {
+  color: #ffffff !important;
+}
+
+.uiverse-journey-card:hover .journey-para {
+  color: #e8f8ef !important;
+  opacity: 0.95 !important;
+}
+
+.uiverse-journey-card:hover .journey-stat-box {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.uiverse-journey-card:hover .journey-stat-box .stat-num {
+  color: #ffffff !important;
+}
+
+.uiverse-journey-card:hover .journey-stat-box .stat-lbl {
+  color: #c8f0d8 !important;
+}
+
+.uiverse-journey-card:hover .about-badge {
+  background: #ffffff !important;
+  color: #1a6b3c !important;
+}
+
+.uiverse-journey-card:hover {
+  box-shadow: 0 16px 40px rgba(26, 107, 60, 0.3) !important;
+  transform: scale(1.03) translateY(-4px) !important;
+}
+
+/* Ensure Zero Card Clipping / Cutting on Desktop & Mobile */
+.about,
+.about-inner,
+.about-visual {
+  overflow: visible !important;
+  height: auto !important;
+}
+
+/* 2. Product Category Open Card Cascade Entrance Animation */
+.product-category.is-open .product-card {
+  animation: cardCascadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+}
+
+@keyframes cardCascadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(28px) scale(0.94);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.product-category.is-open .product-card:nth-child(1) { animation-delay: 0.04s !important; }
+.product-category.is-open .product-card:nth-child(2) { animation-delay: 0.10s !important; }
+.product-category.is-open .product-card:nth-child(3) { animation-delay: 0.16s !important; }
+.product-category.is-open .product-card:nth-child(4) { animation-delay: 0.22s !important; }
+.product-category.is-open .product-card:nth-child(5) { animation-delay: 0.28s !important; }
+.product-category.is-open .product-card:nth-child(6) { animation-delay: 0.34s !important; }
+
+/* 3. Sister Concerns Header Harmonization (Matches all other page headings) */
+.sisters .section-header {
+  text-align: center !alignment;
+  margin-bottom: 56px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+.sisters .section-header h2 {
+  font-family: 'Playfair Display', serif !important;
+  font-size: clamp(28px, 4vw, 42px) !important;
+  color: var(--green-deep) !important;
+  font-weight: 700 !important;
+  margin-bottom: 14px !important;
+}
+
+.sisters .section-header .divider {
+  display: block !important;
+  width: 60px !important;
+  height: 4px !important;
+  background: linear-gradient(90deg, var(--green-deep), var(--green-mid), var(--green-light)) !important;
+  margin: 20px auto 0 !important;
+  border-radius: 3px !important;
 }
 
 </style>
