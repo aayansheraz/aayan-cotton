@@ -5,6 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aayan Cotton Industries - A Symbol of Excellence</title>
+  <link rel="icon" type="image/webp" href="media/Logo.webp">
+  <link rel="shortcut icon" type="image/webp" href="media/Logo.webp">
+  <link rel="apple-touch-icon" href="media/Logo.webp">
   <meta name="description"
     content="Aayan Cotton Industries (ACI) - Pakistan's leading manufacturer of absorbent & non-absorbent cotton wool rolls, surgical dressings, and medical devices since 2000. Exporting to 20+ countries worldwide.">
   <link rel="preload" href="fonts/font_0.woff2" as="font" type="font/woff2" crossorigin>
@@ -5387,6 +5390,76 @@ nav.scrolled .nav-links a:hover {
   50% { transform: translateY(5px); }
 }
 
+
+/* ==========================================================================
+   LUXURY FLOATING MOUSE SCROLL INDICATOR FOR STORY SECTION
+   ========================================================================== */
+
+.aci-story-scroll-indicator {
+  position: absolute !important;
+  bottom: 36px !important;
+  right: 48px !important;
+  z-index: 25 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  background: rgba(12, 31, 22, 0.76) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  padding: 10px 20px 10px 14px !important;
+  border-radius: 40px !important;
+  border: 1px solid rgba(200, 240, 216, 0.28) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+  pointer-events: none !important;
+  transition: opacity 0.5s ease, transform 0.5s ease !important;
+}
+
+.mouse-icon {
+  width: 20px !important;
+  height: 32px !important;
+  border: 2px solid #86dca8 !important;
+  border-radius: 12px !important;
+  position: relative !important;
+  display: flex !important;
+  justify-content: center !important;
+  padding-top: 6px !important;
+  box-sizing: border-box !important;
+}
+
+.wheel-dot {
+  width: 4px !important;
+  height: 8px !important;
+  background: #86dca8 !important;
+  border-radius: 3px !important;
+  animation: scrollWheel 2s cubic-bezier(0.16, 1, 0.3, 1) infinite !important;
+}
+
+@keyframes scrollWheel {
+  0% { transform: translateY(0); opacity: 1; }
+  60% { transform: translateY(10px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 0; }
+}
+
+.indicator-text {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  color: #c8f0d8 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+}
+
+@media (max-width: 768px) {
+  .aci-story-scroll-indicator {
+    bottom: 24px !important;
+    right: 20px !important;
+    padding: 8px 14px !important;
+  }
+  .indicator-text {
+    font-size: 10px !important;
+    letter-spacing: 0.12em !important;
+  }
+}
+
 </style>
   <link rel="preload" href="fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="fonts.css"></noscript>
@@ -5635,6 +5708,12 @@ nav.scrolled .nav-links a:hover {
   <section class="aci-story" id="journey" data-screen-label="Journey">
     <div class="aci-story-track">
       <div class="aci-story-stage">
+        <div class="aci-story-scroll-indicator" aria-hidden="true">
+          <div class="mouse-icon">
+            <div class="wheel-dot"></div>
+          </div>
+          <span class="indicator-text">SCROLL TO EXPLORE</span>
+        </div>
         <div class="aci-story-media">
           <div class="aci-story-layer is-active" data-step="0"><img src="media/STORYLINE1.webp" alt="Hand-selected premium cotton fibre arriving from farms"
               loading="lazy"></div>
@@ -5654,10 +5733,7 @@ nav.scrolled .nav-links a:hover {
         </div>
         <div class="aci-story-content">
           <div class="aci-story-tag">From Fibre to Finish</div>
-          <div class="aci-story-scroll-hint">
-            <span>Scroll down to explore</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 13l5 5 5-5M12 6v12"/></svg>
-          </div>
+          
           <div class="aci-story-steps">
             <div class="aci-story-step is-active" data-step="0"><span class="aci-story-num">01</span>
               <h3>Raw Cotton</h3>
@@ -6463,10 +6539,9 @@ nav.scrolled .nav-links a:hover {
       </div>
     </div>
 
-    <div class="footer-bottom">
+        <div class="footer-bottom">
       <span>© 2026 Aayan Cotton Industries. All Rights Reserved.</span>
-      <span>CRAFTED BY <a href="https://visionnetic-tech.vercel.app/" target="_blank" rel="noopener" style="color:var(--green-light,#4cba72);text-decoration:none;font-weight:700;">Visionnetic Tech</a></span>
-      <span>Depalpur Road, Okara, Punjab, Pakistan</span>
+      <span>Crafted by <a href="https://visionnetic-tech.vercel.app/" target="_blank" rel="noopener" style="color:var(--green-light,#4cba72);text-decoration:none;"><strong>Visionnetic Tech</strong></a></span>
     </div>
   </footer>
 
