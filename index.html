@@ -5460,6 +5460,41 @@ nav.scrolled .nav-links a:hover {
   }
 }
 
+
+/* ==========================================================================
+   TOP-RIGHT STORY SCROLL BADGE + HIDE FLOATING BUTTONS IN STORY & FOOTER
+   ========================================================================== */
+
+/* Shift Scroll Badge to Top-Right of Story Stage */
+.aci-story-scroll-indicator {
+  top: 36px !important;
+  right: 48px !important;
+  bottom: auto !important;
+}
+
+@media (max-width: 768px) {
+  .aci-story-scroll-indicator {
+    top: 20px !important;
+    right: 20px !important;
+    bottom: auto !important;
+  }
+}
+
+/* Hide floating WhatsApp & Scroll-Top buttons in Story section and Footer */
+body.in-story-section .whatsapp-float,
+body.in-story-section #contactWhatsappFloat,
+body.in-story-section .scroll-top,
+body.in-story-section #scrollTop,
+body.in-footer-section .whatsapp-float,
+body.in-footer-section #contactWhatsappFloat,
+body.in-footer-section .scroll-top,
+body.in-footer-section #scrollTop {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: scale(0.7) !important;
+  transition: opacity 0.35s ease, transform 0.35s ease !important;
+}
+
 </style>
   <link rel="preload" href="fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="fonts.css"></noscript>
@@ -9326,6 +9361,30 @@ nav.scrolled .nav-links a:hover {
       });
     })();
   </script>
+
+  <script>
+    (function observeFloatingButtonsHide() {
+      const story = document.getElementById('journey') || document.querySelector('.aci-story');
+      const footer = document.querySelector('footer');
+
+      if (!story && !footer) return;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.target === story) {
+            document.body.classList.toggle('in-story-section', entry.isIntersecting);
+          }
+          if (entry.target === footer) {
+            document.body.classList.toggle('in-footer-section', entry.isIntersecting);
+          }
+        });
+      }, { threshold: 0.05 });
+
+      if (story) observer.observe(story);
+      if (footer) observer.observe(footer);
+    })();
+  </script>
 </body>
+
 
 </html>
