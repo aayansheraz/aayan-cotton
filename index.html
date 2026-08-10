@@ -4352,11 +4352,7 @@ a.whatsapp-link:not(#contactWhatsappFloat):not(.whatsapp-float) {
   transform: translateY(-2px) !important;
 }
 
-/* ==========================================================================
-   AESTHETIC JUNCTION HAMBURGER MENU & DRAWER CLONE (LUXURY PHYSICS)
-   ========================================================================== */
-
-/* Asymmetrical 3-line Hamburger Button */
+/* Aesthetic Junction Hamburger Icon & Drawer Physics */
 .menu-btn {
   display: flex !important;
   flex-direction: column !important;
@@ -4391,7 +4387,6 @@ body[data-theme="dark"] .menu-btn span {
   background: white !important;
 }
 
-/* Staggered Line Widths (Aesthetic Junction Signature) */
 .menu-btn span.bar-top,
 .menu-btn span:nth-child(1) {
   width: 22px !important;
@@ -4407,7 +4402,6 @@ body[data-theme="dark"] .menu-btn span {
   width: 19px !important;
 }
 
-/* Open Morphing State ("X" Transformation) */
 .menu-btn.active {
   background: var(--green-deep) !important;
   border-color: var(--green-deep) !important;
@@ -4436,7 +4430,6 @@ body[data-theme="dark"] .menu-btn span {
   transform: translateY(-7px) rotate(-45deg) !important;
 }
 
-/* Mobile Slide-Out Drawer Panel (Aesthetic Junction Clone) */
 @media (max-width: 768px) {
   .nav-links {
     position: fixed !important;
@@ -4476,7 +4469,6 @@ body[data-theme="dark"] .menu-btn span {
     transform: translateX(0) !important;
   }
 
-  /* Cascading Staggered Delays for Menu Items */
   .nav-links.open li:nth-child(1) { transition-delay: 90ms !important; }
   .nav-links.open li:nth-child(2) { transition-delay: 140ms !important; }
   .nav-links.open li:nth-child(3) { transition-delay: 190ms !important; }
@@ -4497,7 +4489,6 @@ body[data-theme="dark"] .menu-btn span {
     color: var(--green-light) !important;
   }
 
-  /* Backdrop Glass Blur Overlay */
   .nav-backdrop {
     position: fixed !important;
     inset: 0 !important;
@@ -8012,17 +8003,32 @@ body[data-theme="dark"] .menu-btn span {
       if (menuBtn && navLinks) {
         menuBtn.setAttribute('type', 'button');
         menuBtn.setAttribute('aria-label', 'Open navigation menu');
-        menuBtn.addEventListener('click', () => {
+        menuBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
           const isOpen = navLinks.classList.toggle('open');
           menuBtn.classList.toggle('active', isOpen);
-          document.body.classList.toggle('nav-open', isOpen);
+          const navBackdrop = document.getElementById('navBackdrop');
+          if (navBackdrop) navBackdrop.classList.toggle('open', isOpen);
+          document.body.style.overflow = isOpen ? 'hidden' : '';
           menuBtn.setAttribute('aria-expanded', String(isOpen));
         });
+        const navBackdrop = document.getElementById('navBackdrop');
+        if (navBackdrop) {
+          navBackdrop.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+            menuBtn.classList.remove('active');
+            navBackdrop.classList.remove('open');
+            document.body.style.overflow = '';
+            menuBtn.setAttribute('aria-expanded', 'false');
+          });
+        }
         navLinks.querySelectorAll('a').forEach(link => {
           link.addEventListener('click', () => {
             navLinks.classList.remove('open');
             menuBtn.classList.remove('active');
-            document.body.classList.remove('nav-open');
+            const navBackdrop = document.getElementById('navBackdrop');
+            if (navBackdrop) navBackdrop.classList.remove('open');
+            document.body.style.overflow = '';
             menuBtn.setAttribute('aria-expanded', 'false');
           });
         });
@@ -8459,42 +8465,6 @@ body[data-theme="dark"] .menu-btn span {
     })();
   </script>
 
-<script>
-    (function initAestheticHamburger() {
-      const menuBtn = document.getElementById('menuBtn');
-      const navLinks = document.querySelector('.nav-links');
-      const backdrop = document.getElementById('navBackdrop');
-      if (!menuBtn || !navLinks) return;
-
-      function toggleMenu(open) {
-        const isOpen = typeof open === 'boolean' ? open : !menuBtn.classList.contains('active');
-        menuBtn.classList.toggle('active', isOpen);
-        navLinks.classList.toggle('open', isOpen);
-        if (backdrop) backdrop.classList.toggle('open', isOpen);
-
-        // Body Scroll Lock
-        if (isOpen) {
-          document.body.style.overflow = 'hidden';
-        } else {
-          document.body.style.overflow = '';
-        }
-      }
-
-      menuBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        toggleMenu();
-      });
-
-      if (backdrop) {
-        backdrop.addEventListener('click', () => toggleMenu(false));
-      }
-
-      // Close menu when clicking links
-      navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => toggleMenu(false));
-      });
-    })();
-  </script>
 </body>
 
 </html>
