@@ -3873,8 +3873,8 @@ section, footer, .footer-inner, .about-inner, .products-inner, .certificates-inn
 
 @media (max-width: 768px) {
   :root {
-    --cube-width: 82vw !important;
-    --cube-height: 220px !important;
+    --cube-width: 72vw !important;
+    --cube-height: 185px !important;
   }
 
   .sisters {
@@ -7611,50 +7611,53 @@ body .map-tab-btn.active {
         if (isOpen) {
           category.classList.add('is-open');
           toggle.setAttribute('aria-expanded', 'true');
-          panel.hidden = false;
-          panel.style.maxHeight = panel.scrollHeight + 'px';
+          panel.removeAttribute('hidden');
+          panel.style.display = 'grid';
+          panel.style.opacity = '1';
+          panel.style.visibility = 'visible';
+          
+          // Unhide first to compute true scrollHeight
+          const targetHeight = Math.max(panel.scrollHeight, 1200);
+          panel.style.maxHeight = targetHeight + 'px';
 
-          // Reset and trigger repeat stagger animation
           panel.querySelectorAll('.reveal').forEach(item => {
-            item.classList.remove('visible');
+            item.classList.add('visible');
           });
 
-          // Allow overflow after height transition to prevent card hover clipping
           setTimeout(() => {
             if (category.classList.contains('is-open')) {
               panel.style.overflow = 'visible';
+              panel.style.maxHeight = 'none';
             }
-          }, 500);
-
-          setTimeout(() => {
-            panel.querySelectorAll('.reveal').forEach((item, index) => {
-              setTimeout(() => {
-                item.classList.add('visible');
-              }, index * 85);
-            });
-          }, 50);
+          }, 450);
         } else {
           category.classList.remove('is-open');
           toggle.setAttribute('aria-expanded', 'false');
-          panel.style.overflow = 'hidden'; // Immediately clip overflow during collapse
-          panel.style.maxHeight = '0px';
-
-          panel.querySelectorAll('.reveal').forEach(item => {
-            item.classList.remove('visible');
+          panel.style.overflow = 'hidden';
+          if (panel.style.maxHeight === 'none') {
+            panel.style.maxHeight = panel.scrollHeight + 'px';
+          }
+          requestAnimationFrame(() => {
+            panel.style.maxHeight = '0px';
+            panel.style.opacity = '0';
           });
 
           setTimeout(() => {
             if (!category.classList.contains('is-open')) {
-              panel.hidden = true;
+              panel.setAttribute('hidden', 'true');
             }
-          }, 500);
+          }, 450);
         }
       }
 
-      function openCategory(targetCategory) {
-        const shouldOpen = !targetCategory.classList.contains('is-open');
+      function toggleCategory(targetCategory) {
+        const isCurrentlyOpen = targetCategory.classList.contains('is-open');
         categories.forEach(category => {
-          setCategoryState(category, shouldOpen && category === targetCategory);
+          if (category === targetCategory) {
+            setCategoryState(category, !isCurrentlyOpen);
+          } else {
+            setCategoryState(category, false);
+          }
         });
       }
 
@@ -7668,11 +7671,15 @@ body .map-tab-btn.active {
         panel.id = panel.id || `${categoryId}-panel`;
         toggle.setAttribute('aria-controls', panel.id);
 
-        toggle.addEventListener('click', () => openCategory(category));
+        toggle.addEventListener('click', (e) => {
+          e.preventDefault();
+          toggleCategory(category);
+        });
       });
 
-      const initiallyOpen = categories.find(category => category.classList.contains('is-open'));
-      categories.forEach(category => setCategoryState(category, Boolean(initiallyOpen && category === initiallyOpen)));
+      // Default open first category (Cotton Rolls) if none open
+      let initiallyOpen = categories.find(category => category.classList.contains('is-open')) || categories[0];
+      categories.forEach(category => setCategoryState(category, category === initiallyOpen));
     })();</script>
   <script>
     (function () {
