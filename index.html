@@ -4253,12 +4253,60 @@ header, nav, main, section, .hero, .about, .vision-mission, .products, .certific
 
 
 /* ==========================================================================
-   EXACT AESTHETIC JUNCTION MOBILE DRAWER & HAMBURGER CLONE
+   ACI MASTER DESIGN SYSTEM (CENTER-ALIGNED NAV, OUR JOURNEY DEPTH, LIGHT THEME)
    ========================================================================== */
+
+/* Desktop Navbar: Logo (Left), Nav Links (Center), Get In Touch CTA (Far Right) */
+@media (min-width: 769px) {
+  nav#navbar {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0 48px !important;
+    height: 80px !important;
+  }
+
+  nav#navbar .logo {
+    display: flex !important;
+    align-items: center !important;
+    flex: 0 0 auto !important;
+  }
+
+  nav#navbar .nav-links {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 32px !important;
+    margin: 0 auto !important;
+    list-style: none !important;
+  }
+
+  nav#navbar .nav-actions {
+    display: flex !important;
+    align-items: center !important;
+    flex: 0 0 auto !important;
+    margin-left: auto !important;
+  }
+
+  nav#navbar .menu-btn {
+    display: none !important;
+  }
+}
+
+/* Mobile Navbar Actions */
+@media (max-width: 768px) {
+  nav#navbar .nav-links,
+  nav#navbar .nav-cta {
+    display: none !important;
+  }
+
+  nav#navbar .menu-btn {
+    display: flex !important;
+  }
+}
 
 /* Asymmetrical 3-bar Hamburger Button */
 .menu-btn {
-  display: none;
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
@@ -4272,25 +4320,12 @@ header, nav, main, section, .hero, .about, .vision-mission, .products, .certific
   position: relative;
 }
 
-@media (max-width: 768px) {
-  .menu-btn {
-    display: flex !important;
-  }
-  .nav-links {
-    display: none !important;
-  }
-}
-
 .menu-btn span {
   display: block;
   height: 2px;
   background: var(--green-deep);
   border-radius: 2px;
   transition: all 0.3s cubic-bezier(0.76, 0, 0.24, 1);
-}
-
-body[data-theme="dark"] .menu-btn span {
-  background: white;
 }
 
 .menu-btn .bar-top { width: 24px; }
@@ -4320,7 +4355,7 @@ body[data-theme="dark"] .menu-btn span {
   z-index: 999;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.4s ease;
 }
 
 .mobile-menu-overlay.open {
@@ -4328,11 +4363,11 @@ body[data-theme="dark"] .menu-btn span {
   pointer-events: auto;
 }
 
-/* Backdrop */
+/* Backdrop Blur Overlay */
 .mobile-menu-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
@@ -4346,19 +4381,14 @@ body[data-theme="dark"] .menu-btn span {
   width: 85%;
   max-width: 360px;
   background: var(--cream);
-  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.3);
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 32px 28px;
+  padding: 36px 28px;
   transform: translateX(100%);
-  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+  transition: transform 0.45s cubic-bezier(0.76, 0, 0.24, 1);
   z-index: 1000;
-}
-
-body[data-theme="dark"] .mobile-menu-drawer {
-  background: #0f1f17;
-  border-left: 1px solid rgba(76, 186, 114, 0.2);
 }
 
 .mobile-menu-overlay.open .mobile-menu-drawer {
@@ -4370,10 +4400,6 @@ body[data-theme="dark"] .mobile-menu-drawer {
   padding-bottom: 16px;
   border-bottom: 1px solid var(--green-pale);
   margin-top: 8px;
-}
-
-body[data-theme="dark"] .drawer-header {
-  border-bottom-color: rgba(76, 186, 114, 0.2);
 }
 
 .drawer-tagline {
@@ -4388,7 +4414,7 @@ body[data-theme="dark"] .drawer-header {
 .drawer-links {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 22px;
   margin: auto 0;
 }
 
@@ -4399,15 +4425,11 @@ body[data-theme="dark"] .drawer-header {
   text-decoration: none;
   opacity: 0;
   transform: translateX(24px);
-  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.76, 0, 0.24, 1), color 0.2s;
-}
-
-body[data-theme="dark"] .drawer-link {
-  color: white;
+  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.76, 0, 0.24, 1), color 0.2s;
 }
 
 .drawer-link:hover {
-  color: var(--green-light);
+  color: var(--green-mid);
 }
 
 /* Cascading Staggered Link Delays */
@@ -4428,11 +4450,7 @@ body[data-theme="dark"] .drawer-link {
   border-top: 1px solid var(--green-pale);
   opacity: 0;
   transform: translateY(16px);
-  transition: opacity 0.5s ease 330ms, transform 0.5s cubic-bezier(0.76, 0, 0.24, 1) 330ms;
-}
-
-body[data-theme="dark"] .drawer-footer {
-  border-top-color: rgba(76, 186, 114, 0.2);
+  transition: opacity 0.4s ease 320ms, transform 0.4s cubic-bezier(0.76, 0, 0.24, 1) 320ms;
 }
 
 .mobile-menu-overlay.open .drawer-footer {
@@ -4443,7 +4461,7 @@ body[data-theme="dark"] .drawer-footer {
 .drawer-footer-text {
   font-size: 13px;
   color: var(--text-light);
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .drawer-cta-btn {
@@ -4456,7 +4474,6 @@ body[data-theme="dark"] .drawer-footer {
   border-radius: 30px;
   font-size: 13px;
   font-weight: 700;
-  text-transform: uppercase;
   letter-spacing: 0.08em;
   text-decoration: none;
   transition: background 0.2s;
@@ -4466,7 +4483,36 @@ body[data-theme="dark"] .drawer-footer {
   background: var(--green-mid);
 }
 
-/* Hover-Only Shiny Sheen for Product Category Buttons */
+/* Hide Floating WhatsApp & Scroll-Top Button when Mobile Drawer is Open */
+body.menu-open .whatsapp-float,
+body.menu-open #contactWhatsappFloat,
+body.menu-open .scroll-top-btn,
+body.menu-open #scrollTopBtn,
+.mobile-menu-overlay.open ~ .whatsapp-float,
+.mobile-menu-overlay.open ~ #contactWhatsappFloat {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Our Journey Card: Rounded Border Radius & Signature 3D Pressure Weight Hover Feel */
+.about-card {
+  border-radius: 28px !important;
+  border: 2px solid var(--green-pale) !important;
+  background: linear-gradient(135deg, var(--green-soft), rgba(200, 240, 216, 0.6)) !important;
+  box-shadow: 0 8px 30px rgba(26, 107, 60, 0.08) !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s !important;
+  cursor: pointer;
+}
+
+.about-card:hover {
+  transform: translateY(4px) scale(0.985) !important;
+  border-color: var(--green-mid) !important;
+  box-shadow: 0 4px 14px rgba(26, 107, 60, 0.12), inset 0 2px 4px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Product Category Accordion (Hover-Only Sheen + Single Rotating Chevron) */
 .category-title {
   position: relative;
   overflow: hidden;
@@ -4506,47 +4552,7 @@ body[data-theme="dark"] .drawer-footer {
   transform: none !important;
 }
 
-/* Desktop Navbar Layout & Alignment Fix */
-@media (min-width: 769px) {
-  nav#navbar {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    padding: 0 48px !important;
-    height: 80px !important;
-  }
-
-  nav#navbar .logo {
-    display: flex !important;
-    align-items: center !important;
-    margin-right: auto !important;
-  }
-
-  nav#navbar .nav-links {
-    display: flex !important;
-    align-items: center !important;
-    gap: 32px !important;
-    margin: 0 32px 0 auto !important;
-    list-style: none !important;
-  }
-
-  nav#navbar .nav-mobile-actions {
-    display: flex !important;
-    align-items: center !important;
-    gap: 16px !important;
-  }
-
-  nav#navbar .menu-btn {
-    display: none !important;
-  }
-
-  nav#navbar .theme-toggle {
-    margin: 0 !important;
-    flex-shrink: 0 !important;
-  }
-}
-
-/* WhatsApp Contact Button Fix (Unsquish inline form button) */
+/* WhatsApp Inline Form Button Fix */
 #contactWhatsapp,
 .form-submit.whatsapp-link,
 a.whatsapp-link:not(#contactWhatsappFloat):not(.whatsapp-float) {
@@ -4619,17 +4625,18 @@ a.whatsapp-link:not(#contactWhatsappFloat):not(.whatsapp-float) {
       <img src="media/Logo.webp" alt="Aayan Cotton Logo" class="logo-img">
     </a>
 
+    <!-- Center-Aligned Desktop Nav Links -->
     <ul class="nav-links">
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About Us</a></li>
       <li><a href="#products">Products</a></li>
       <li><a href="#certificates">Certificates</a></li>
       <li><a href="#contact">Contact Us</a></li>
-      <li><a href="#contact" class="nav-cta">Get In Touch</a></li>
     </ul>
 
-    <div class="nav-mobile-actions">
-      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch theme" title="Switch theme">☾</button>
+    <!-- Far-Right Desktop CTA & Mobile Hamburger Button -->
+    <div class="nav-actions">
+      <a href="#contact" class="nav-cta">Get In Touch</a>
       <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" type="button">
         <span class="bar-top"></span>
         <span class="bar-mid"></span>
@@ -4638,7 +4645,7 @@ a.whatsapp-link:not(#contactWhatsappFloat):not(.whatsapp-float) {
     </div>
   </nav>
 
-  <!-- Aesthetic Junction Mobile Menu Overlay & Slide Drawer -->
+  <!-- Aesthetic Mobile Menu Overlay & Drawer -->
   <div class="mobile-menu-overlay" id="mobileMenuOverlay">
     <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
     <div class="mobile-menu-drawer" id="mobileMenuDrawer">
@@ -4654,7 +4661,7 @@ a.whatsapp-link:not(#contactWhatsappFloat):not(.whatsapp-float) {
       </div>
       <div class="drawer-footer">
         <p class="drawer-footer-text">A Symbol of Excellence Since 2000</p>
-        <a href="#contact" class="drawer-cta-btn">Get In Touch</a>
+        <a href="#contact" class="drawer-cta-btn">GET IN TOUCH</a>
       </div>
     </div>
   </div>
@@ -8052,73 +8059,7 @@ a.whatsapp-link:not(#contactWhatsappFloat):not(.whatsapp-float) {
     })();</script>
   <script>
     (function () {
-      const root = document.body;
-      const toggle = document.getElementById('themeToggle');
-      function readThemePreference() {
-        try {
-          return localStorage.getItem('aci-theme');
-        } catch (error) {
-          return null;
-        }
-      }
-
-      function saveThemePreference(theme) {
-        try {
-          localStorage.setItem('aci-theme', theme);
-        } catch (error) {
-        }
-      }
-
-      const savedTheme = readThemePreference();
-
-      function applyTheme(theme) {
-        root.setAttribute('data-theme', theme);
-        if (toggle) {
-          toggle.textContent = theme === 'dark' ? '☀️' : '☾';
-          toggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
-          toggle.title = theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme';
-        }
-      }
-
-      applyTheme(savedTheme || 'light');
-
-      if (toggle) {
-        toggle.addEventListener('click', () => {
-          const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-          saveThemePreference(next);
-          applyTheme(next);
-        });
-      }
-
-      const menuBtn = document.getElementById('menuBtn');
-      const navLinks = document.querySelector('.nav-links');
-      if (menuBtn && navLinks) {
-        menuBtn.setAttribute('type', 'button');
-        menuBtn.setAttribute('aria-label', 'Open navigation menu');
-        menuBtn.addEventListener('click', () => {
-          const isOpen = navLinks.classList.toggle('open');
-          menuBtn.classList.toggle('active', isOpen);
-          document.body.classList.toggle('nav-open', isOpen);
-          menuBtn.setAttribute('aria-expanded', String(isOpen));
-        });
-        navLinks.querySelectorAll('a').forEach(link => {
-          link.addEventListener('click', () => {
-            navLinks.classList.remove('open');
-            menuBtn.classList.remove('active');
-            document.body.classList.remove('nav-open');
-            menuBtn.setAttribute('aria-expanded', 'false');
-          });
-        });
-        const navDrawerOverlay = document.getElementById('navDrawerOverlay');
-        if (navDrawerOverlay) {
-          navDrawerOverlay.addEventListener('click', () => {
-            navLinks.classList.remove('open');
-            menuBtn.classList.remove('active');
-            document.body.classList.remove('nav-open');
-            menuBtn.setAttribute('aria-expanded', 'false');
-          });
-        }
-      }
+      
 
       const form = document.getElementById('contactForm');
       const whatsapp = document.getElementById('contactWhatsapp');
@@ -8543,7 +8484,7 @@ a.whatsapp-link:not(#contactWhatsappFloat):not(.whatsapp-float) {
   </script>
 
 <script>
-    (function initAestheticMenu() {
+    (function initAestheticMobileMenu() {
       const menuBtn = document.getElementById('menuBtn');
       const overlay = document.getElementById('mobileMenuOverlay');
       const backdrop = document.getElementById('mobileMenuBackdrop');
@@ -8553,6 +8494,7 @@ a.whatsapp-link:not(#contactWhatsappFloat):not(.whatsapp-float) {
         const isOpen = typeof openState === 'boolean' ? openState : !overlay.classList.contains('open');
         menuBtn.classList.toggle('active', isOpen);
         overlay.classList.toggle('open', isOpen);
+        document.body.classList.toggle('menu-open', isOpen);
         document.body.style.overflow = isOpen ? 'hidden' : '';
       }
 
