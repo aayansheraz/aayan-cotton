@@ -4956,6 +4956,177 @@ a.nav-cta::after {
   border-radius: 3px !important;
 }
 
+
+/* ==========================================================================
+   MASTER FIXES V2 — SISTER CONCERNS HEADING, JOURNEY HOVER VISIBILITY & SMOOTH ACCORDION
+   ========================================================================== */
+
+/* 1. Sister Concerns Header — Exact Styling Matching Achievements Screenshot */
+.sisters .section-header {
+  text-align: center !important;
+  margin-bottom: 52px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+.sisters .section-header .section-tag {
+  background: rgba(255, 255, 255, 0.15) !important;
+  color: #c8f0d8 !important;
+  border: 1px solid rgba(200, 240, 216, 0.3) !important;
+  font-weight: 700 !important;
+  font-size: 12px !important;
+  letter-spacing: 0.14em !important;
+  padding: 8px 24px !important;
+  border-radius: 30px !important;
+  margin-bottom: 16px !important;
+  display: inline-block !important;
+  text-transform: uppercase !important;
+}
+
+.sisters .section-header h2 {
+  font-family: 'Playfair Display', serif !important;
+  font-size: clamp(34px, 5.5vw, 52px) !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  margin-bottom: 12px !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35) !important;
+  letter-spacing: -0.01em !important;
+}
+
+.sisters .section-header p {
+  color: rgba(255, 255, 255, 0.88) !important;
+  font-size: 16.5px !important;
+  max-width: 600px !important;
+  margin: 0 auto !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25) !important;
+  font-weight: 400 !important;
+}
+
+.sisters .section-header .divider {
+  display: none !important;
+}
+
+/* 2. Journey Card Hover Visibility (Crisp White Heading/Paragraph + Vibrant Moving Outline) */
+
+.uiverse-journey-card {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  max-width: 520px !important;
+  padding: 3px !important;
+  border-radius: 24px !important;
+  overflow: hidden !important;
+  line-height: 1.6 !important;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1) !important;
+  background: transparent !important;
+  margin: 0 auto 24px !important;
+  border: none !important;
+  box-shadow: 0 10px 30px rgba(26, 107, 60, 0.12) !important;
+}
+
+/* Conic laser gradient for bright, highly-visible moving border outline */
+.uiverse-journey-card::before {
+  content: "" !important;
+  position: absolute !important;
+  height: 220% !important;
+  width: 220% !important;
+  border-radius: inherit !important;
+  background: conic-gradient(from 0deg, #00c853, #ffffff, #2d9b57, #ffffff, #00c853) !important;
+  transform-origin: center !important;
+  animation: moving 3.5s linear infinite paused !important;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) !important;
+  z-index: 0 !important;
+}
+
+.uiverse-journey-card:hover::before {
+  animation-play-state: running !important;
+}
+
+.uiverse-journey-content {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  gap: 16px !important;
+  padding: 36px 30px !important;
+  border-radius: 22px !important;
+  background: #ffffff !important;
+  color: var(--text-dark, #0d2b1a) !important;
+  overflow: hidden !important;
+  width: 100% !important;
+  z-index: 1 !important;
+  transition: background 0.45s cubic-bezier(0.16, 1, 0.3, 1), color 0.45s ease, transform 0.45s ease !important;
+  position: relative !important;
+}
+
+/* 100% VISIBILITY ON HOVER: Invert card background to green AND force ALL headings & paragraphs to crisp white */
+.uiverse-journey-card:hover .uiverse-journey-content {
+  background: #1a6b3c !important;
+  color: #ffffff !important;
+}
+
+.uiverse-journey-card:hover .journey-heading,
+.uiverse-journey-card:hover .uiverse-journey-content h3 {
+  color: #ffffff !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
+.uiverse-journey-card:hover .journey-para,
+.uiverse-journey-card:hover .uiverse-journey-content p {
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+.uiverse-journey-card:hover .journey-stat-box {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.uiverse-journey-card:hover .journey-stat-box .stat-num {
+  color: #ffffff !important;
+}
+
+.uiverse-journey-card:hover .journey-stat-box .stat-lbl {
+  color: #c8f0d8 !important;
+}
+
+.uiverse-journey-card:hover .about-badge {
+  background: #ffffff !important;
+  color: #1a6b3c !important;
+  font-weight: 700 !important;
+}
+
+.uiverse-journey-card:hover {
+  box-shadow: 0 16px 40px rgba(26, 107, 60, 0.35) !important;
+  transform: scale(1.03) translateY(-4px) !important;
+}
+
+/* 3. Smooth Butter-Slide Transition for Product Category Accordion */
+
+.product-category .products-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+  gap: 24px !important;
+  max-height: 0 !important;
+  opacity: 0 !important;
+  overflow: hidden !important;
+  transition: max-height 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.45s ease,
+              transform 0.45s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transform: translateY(-12px) !important;
+}
+
+.product-category.is-open .products-grid {
+  max-height: 3000px !important;
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  overflow: visible !important;
+}
+
 </style>
   <link rel="preload" href="fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="fonts.css"></noscript>
@@ -5713,8 +5884,9 @@ a.nav-cta::after {
       <div class="sisters-overlay"></div>
 
       <div class="section-header reveal">
-        <div class="section-tag">Our Group</div>
+        <div class="section-tag">OUR GROUP</div>
         <h2>Sister Concerns</h2>
+        <p>Expanding healthcare excellence and global distribution since 2000.</p>
         <div class="divider"></div>
       </div>
 
