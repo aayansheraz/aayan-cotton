@@ -4541,6 +4541,94 @@ a.whatsapp-link:not(#contactWhatsappFloat):not(.whatsapp-float) {
   box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5) !important;
 }
 
+
+/* ==========================================================================
+   ACI MASTER UPDATES FOR ALL 5 USER REQUESTS
+   ========================================================================== */
+
+/* 1. Shift Mobile Menu Cross (X) Slightly UP When Scrolled */
+nav.scrolled .menu-btn,
+body.menu-open .menu-btn {
+  transform: translateY(-6px) !important;
+}
+
+/* 2. Luxury Glassmorphic Sister Concerns Section Header */
+.sisters .section-header {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  padding: 22px 48px !important;
+  border-radius: 60px !important;
+  display: inline-block !important;
+  margin: 0 auto 44px !important;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+  border: 1.5px solid rgba(200, 240, 216, 0.6) !important;
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+.sisters .section-header h2 {
+  color: var(--green-deep) !important;
+  font-size: 36px !important;
+  margin-bottom: 0 !important;
+  text-shadow: none !important;
+}
+
+.sisters .section-tag {
+  background: var(--green-soft) !important;
+  color: var(--green-deep) !important;
+  font-weight: 700 !important;
+  margin-bottom: 8px !important;
+}
+
+.sisters .section-header .divider {
+  display: none !important;
+}
+
+/* 3. Center-Aligned Desktop Nav & Strictly NO Underline on Get In Touch */
+@media (min-width: 769px) {
+  nav#navbar {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+  nav#navbar .nav-links {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 auto !important;
+  }
+  nav#navbar .nav-actions {
+    display: flex !important;
+    align-items: center !important;
+    margin-left: auto !important;
+  }
+}
+
+a.nav-cta,
+a.nav-cta:hover,
+a.nav-cta:focus,
+a.nav-cta:active {
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+a.nav-cta::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* 4. Square Shape for Our Journey Card */
+.about-card {
+  border-radius: 6px !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.about-card:hover {
+  transform: translateY(4px) scale(0.985) !important;
+  box-shadow: 0 4px 14px rgba(26, 107, 60, 0.12), inset 0 2px 4px rgba(0, 0, 0, 0.04) !important;
+}
+
 </style>
   <link rel="preload" href="fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="fonts.css"></noscript>
@@ -7896,7 +7984,11 @@ a.whatsapp-link:not(#contactWhatsappFloat):not(.whatsapp-float) {
 
         toggle.addEventListener('click', (e) => {
           e.preventDefault();
-          setCategoryState(category, !category.classList.contains('is-open'));
+          const willOpen = !category.classList.contains('is-open');
+          categories.forEach(c => setCategoryState(c, false));
+          if (willOpen) {
+            setCategoryState(category, true);
+          }
         });
       });
 
