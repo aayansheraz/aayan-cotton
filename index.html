@@ -4931,7 +4931,7 @@ a.nav-cta::after {
 
 /* 3. Sister Concerns Header Harmonization (Matches all other page headings) */
 .sisters .section-header {
-  text-align: center !alignment;
+  text-align: center !important;
   margin-bottom: 56px !important;
   background: transparent !important;
   box-shadow: none !important;
@@ -5295,6 +5295,74 @@ a.nav-cta::after {
   }
 }
 
+
+/* ==========================================================================
+   MASTER FIXES FOR ALL 4 USER REQUESTS
+   ========================================================================== */
+
+/* 1. Bold Navbar Links for Maximum Contrast over Pictures & Videos */
+nav .nav-links a {
+  font-weight: 700 !important;
+  font-size: 15px !important;
+  letter-spacing: 0.03em !important;
+  color: #ffffff !important;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.65), 0 2px 14px rgba(0, 0, 0, 0.45) !important;
+  transition: color 0.3s ease, text-shadow 0.3s ease !important;
+}
+
+nav.scrolled .nav-links a {
+  color: var(--green-deep, #1a6b3c) !important;
+  text-shadow: none !important;
+  font-weight: 700 !important;
+}
+
+nav.scrolled .nav-links a:hover {
+  color: var(--green-mid, #2d9b57) !important;
+}
+
+/* 2. Completely Remove 100% Organic Badge Styles */
+.about-badge {
+  display: none !important;
+}
+
+/* 3. Separate Testimonials & Contact Us (Visual Distinction & Contrast) */
+.testimonials {
+  background: linear-gradient(180deg, var(--cream, #f9fdf9) 0%, #e8f8ef 100%) !important;
+  border-bottom: 1px solid var(--green-pale, #c8f0d8) !important;
+  padding: 100px 40px !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.contact {
+  background: #ffffff !important;
+  padding: 100px 40px !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* 4. Certificate Hover: LOGO POPS ONLY (Zero green square box outline or background glow) */
+.cert-marquee-item,
+.cert-marquee-item:hover,
+.cert-marquee-item:focus-visible {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
+}
+
+.cert-marquee-item img.cert-logo-img,
+.cert-logo-img {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s !important;
+  background: transparent !important;
+}
+
+.cert-marquee-item:hover img.cert-logo-img,
+.cert-marquee-item:hover .cert-logo-img {
+  transform: scale(1.15) translateY(-4px) !important;
+  filter: drop-shadow(0 10px 24px rgba(26, 107, 60, 0.25)) !important;
+}
+
 </style>
   <link rel="preload" href="fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="fonts.css"></noscript>
@@ -5470,7 +5538,7 @@ a.nav-cta::after {
         </div>
         <div class="uiverse-journey-card">
           <div class="uiverse-journey-content">
-            <div class="about-badge">✓ 100% Organic</div>
+            
             <div class="about-card-icon">🌿</div>
             <h3 class="journey-heading">Our Journey</h3>
             <p class="journey-para">Began in 2000 as a vision held by Dr. Muhammad Asghar on the dusty stretches of Depalpur Road, Okara. Today, that dream has blossomed into a legacy of healing. From our roots in the heart of Punjab, we have risen to become Pakistan’s premier exporter of medical cotton, carrying a piece of our home’s dedication to the rest of the world.</p>
