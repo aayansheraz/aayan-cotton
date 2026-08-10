@@ -5572,6 +5572,38 @@ body.in-footer-section #scrollTop {
   backface-visibility: hidden;
 }
 
+
+/* ==========================================================================
+   PERFECT LOGO ASPECT-RATIO FIX (ZERO SQUISH / DISTORTION)
+   ========================================================================== */
+
+.logo-img {
+  width: auto !important;
+  height: 80px !important;
+  max-height: 80px !important;
+  object-fit: contain !important;
+  aspect-ratio: auto !important;
+  display: block !important;
+}
+
+nav.scrolled .logo-img {
+  width: auto !important;
+  height: 60px !important;
+  max-height: 60px !important;
+  object-fit: contain !important;
+}
+
+@media (max-width: 768px) {
+  .logo-img,
+  nav .logo-img,
+  nav.scrolled .logo-img {
+    width: auto !important;
+    height: 52px !important;
+    max-height: 52px !important;
+    object-fit: contain !important;
+  }
+}
+
 </style>
   <link rel="preload" href="fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="fonts.css"></noscript>
@@ -5581,7 +5613,7 @@ body.in-footer-section #scrollTop {
 <body>
 
   <div id="aci-loader">
-    <svg class="loader-cotton" width="64" height="64" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"
+    <svg class="loader-cotton"  viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"
       fill="rgba(200,240,216,0.8)">
       <ellipse cx="20" cy="20" rx="7" ry="16" transform="rotate(0 20 20)" />
       <ellipse cx="20" cy="20" rx="7" ry="16" transform="rotate(60 20 20)" />
@@ -5611,7 +5643,7 @@ body.in-footer-section #scrollTop {
 
   <nav id="navbar">
     <a href="#" class="logo">
-      <img src="media/Logo.webp" width="225" height="225" alt="Aayan Cotton Logo" class="logo-img">
+      <img src="media/Logo.webp" alt="Aayan Cotton Logo" class="logo-img">
     </a>
 
     <ul class="nav-links">
@@ -5663,11 +5695,11 @@ body.in-footer-section #scrollTop {
               <source src="media/VIDEO1.mp4" type="video/mp4">
       </video>
 
-      <img src="media/PROCESSING1.webp" width="800" height="600" alt="Processing Raw Cotton" class="hero-slide" fetchpriority="high">
+      <img src="media/PROCESSING1.webp"  alt="Processing Raw Cotton" class="hero-slide" fetchpriority="high">
 
-      <img src="media/PROCESSING3.webp" width="800" height="600" alt="Carded Cotton Processing" class="hero-slide" fetchpriority="high">
+      <img src="media/PROCESSING3.webp"  alt="Carded Cotton Processing" class="hero-slide" fetchpriority="high">
 
-      <img src="media/PROCESSING2.webp" width="800" height="600" alt="Raw-Cotton" class="hero-slide" fetchpriority="high">
+      <img src="media/PROCESSING2.webp"  alt="Raw-Cotton" class="hero-slide" fetchpriority="high">
 
       <video preload="none" autoplay loop muted playsinline class="hero-slide" poster="media/processing.webp">
               <track kind="captions" src="data:text/vtt,WEBVTT" label="English" srclang="en">
@@ -5693,7 +5725,7 @@ body.in-footer-section #scrollTop {
               <source src="media/VIDEO5.mp4" type="video/mp4">
       </video>
 
-      <img src="media/COLLECTIVE PRODUCTS.webp" width="800" height="600" alt="Collective Products" class="hero-slide" fetchpriority="high">
+      <img src="media/COLLECTIVE PRODUCTS.webp"  alt="Collective Products" class="hero-slide" fetchpriority="high">
 
       <div class="hero-overlay"></div>
     </div>
@@ -5740,7 +5772,7 @@ body.in-footer-section #scrollTop {
       <div class="about-visual reveal">
         <div class="founder-section">
           <div class="founder-image-container">
-            <img src="media/Founder.webp" width="592" height="444" alt="Founder" id="founder-img">
+            <img src="media/Founder.webp"  alt="Founder" id="founder-img">
           </div>
           <div class="founder-name" id="founder-name">Dr. Muhammad Asghar (Late)</div>
           <div class="founder-title">Founder & Visionary</div>
@@ -5828,13 +5860,13 @@ body.in-footer-section #scrollTop {
           <span class="indicator-text">SCROLL TO EXPLORE</span>
         </div>
         <div class="aci-story-media">
-          <div class="aci-story-layer is-active" data-step="0"><img src="media/STORYLINE1.webp" width="800" height="600" alt="Hand-selected premium cotton fibre arriving from farms"
+          <div class="aci-story-layer is-active" data-step="0"><img src="media/STORYLINE1.webp"  alt="Hand-selected premium cotton fibre arriving from farms"
               loading="lazy"></div>
-          <div class="aci-story-layer" data-step="1"><img src="media/PROCESSING2.webp" width="800" height="600" alt="Cotton carding and cleaning"
+          <div class="aci-story-layer" data-step="1"><img src="media/PROCESSING2.webp"  alt="Cotton carding and cleaning"
               loading="lazy"></div>
-          <div class="aci-story-layer" data-step="2"><img src="media/PROCESSING3.webp" width="800" height="600" alt="Precision cotton rolling"
+          <div class="aci-story-layer" data-step="2"><img src="media/PROCESSING3.webp"  alt="Precision cotton rolling"
               loading="lazy"></div>
-          <div class="aci-story-layer" data-step="3"><img src="media/COLLECTIVE PRODUCTS.webp" width="800" height="600"
+          <div class="aci-story-layer" data-step="3"><img src="media/COLLECTIVE PRODUCTS.webp" 
               alt="Finished medical cotton products" loading="lazy"></div>
           <div class="aci-story-layer" data-step="4"><video muted loop playsinline preload="none"
               poster="media/processing.webp">
@@ -6262,42 +6294,42 @@ body.in-footer-section #scrollTop {
     <div class="cert-marquee">
       <div class="cert-marquee-track">
         <div class="cert-marquee-item" data-images="media/cert1.webp">
-          <img src="media/CERT1LOGO.webp" width="400" height="504" alt="ISO 9001:2015 Logo" class="cert-logo-img">
+          <img src="media/CERT1LOGO.webp"  alt="ISO 9001:2015 Logo" class="cert-logo-img">
           <span class="cert-title">ISO 9001:2015</span>
           <span class="cert-click">Click to view</span>
         </div>
         <div class="cert-marquee-item" data-images="media/cert2.webp">
-          <img src="media/CERT2LOGO.webp" width="400" height="504" alt="ISO 13485:2016 Logo" class="cert-logo-img">
+          <img src="media/CERT2LOGO.webp"  alt="ISO 13485:2016 Logo" class="cert-logo-img">
           <span class="cert-title">ISO 13485:2016</span>
           <span class="cert-click">Click to view</span>
         </div>
         <div class="cert-marquee-item" data-images="media/cert3.webp">
-          <img src="media/CERT3LOGO.webp" width="500" height="261" alt="GMP Logo" class="cert-logo-img">
+          <img src="media/CERT3LOGO.webp"  alt="GMP Logo" class="cert-logo-img">
           <span class="cert-title">GMP Certificate</span>
           <span class="cert-click">Click to view</span>
         </div>
         <div class="cert-marquee-item" data-images="media/cert4.webp,media/cert5.webp">
-          <img src="media/CERT4LOGO.webp" width="400" height="504" alt="CE Logo" class="cert-logo-img">
+          <img src="media/CERT4LOGO.webp"  alt="CE Logo" class="cert-logo-img">
           <span class="cert-title">CE Certificate</span>
           <span class="cert-click">Click to view</span>
         </div>
         <div class="cert-marquee-item" data-images="media/cert1.webp">
-          <img src="media/CERT1LOGO.webp" width="400" height="504" alt="ISO 9001:2015 Logo" class="cert-logo-img">
+          <img src="media/CERT1LOGO.webp"  alt="ISO 9001:2015 Logo" class="cert-logo-img">
           <span class="cert-title">ISO 9001:2015</span>
           <span class="cert-click">Click to view</span>
         </div>
         <div class="cert-marquee-item" data-images="media/cert2.webp">
-          <img src="media/CERT2LOGO.webp" width="400" height="504" alt="ISO 13485:2016 Logo" class="cert-logo-img">
+          <img src="media/CERT2LOGO.webp"  alt="ISO 13485:2016 Logo" class="cert-logo-img">
           <span class="cert-title">ISO 13485:2016</span>
           <span class="cert-click">Click to view</span>
         </div>
         <div class="cert-marquee-item" data-images="media/cert3.webp">
-          <img src="media/CERT3LOGO.webp" width="500" height="261" alt="GMP Logo" class="cert-logo-img">
+          <img src="media/CERT3LOGO.webp"  alt="GMP Logo" class="cert-logo-img">
           <span class="cert-title">GMP Certificate</span>
           <span class="cert-click">Click to view</span>
         </div>
         <div class="cert-marquee-item" data-images="media/cert4.webp,media/cert5.webp">
-          <img src="media/CERT4LOGO.webp" width="400" height="504" alt="CE Logo" class="cert-logo-img">
+          <img src="media/CERT4LOGO.webp"  alt="CE Logo" class="cert-logo-img">
           <span class="cert-title">CE Certificate</span>
           <span class="cert-click">Click to view</span>
         </div>
@@ -6460,7 +6492,7 @@ body.in-footer-section #scrollTop {
                 d="M9.9 19c-3.1 0-5.6-2.5-5.6-5.6 0-3 1.9-5.6 4.6-6.6l1 1.9C7.8 9.5 6.7 10.9 6.7 12.4h3.2v6.6zm10 0c-3.1 0-5.6-2.5-5.6-5.6 0-3 1.9-5.6 4.6-6.6l1 1.9c-2.1.8-3.2 2.2-3.2 3.7h3.2v6.6z" />
             </svg>
           </div>
-          <img src="media/Logo.webp" width="225" height="225" alt="Aayan Cotton Logo" class="graphic-logo">
+          <img src="media/Logo.webp" alt="Aayan Cotton Logo" class="graphic-logo">
         </div>
       </div>
     </div>
@@ -6574,26 +6606,26 @@ body.in-footer-section #scrollTop {
           Punjab, Pakistan by Late Dr. Muhammad Asghar.</p>
         <div class="social-links">
           <a href="https://www.facebook.com/aayancotton" class="social-link" target="_blank" aria-label="Facebook">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <svg viewBox="0 0 24 24"  fill="currentColor">
               <path d="M14 13.5h2.5l1-3H14V8c0-.7.3-1 1-1h1.5V4h-2.5c-2.3 0-3.5 1.2-3.5 3.5v3H9v3h1.5V20h3.5v-6.5z" />
             </svg>
           </a>
           <a href="https://x.com/aayancotton1" class="social-link" target="_blank" aria-label="X (formerly Twitter)">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <svg viewBox="0 0 24 24"  fill="currentColor">
               <path
                 d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
             </svg>
           </a>
           <a href="https://www.instagram.com/aayan__cotton" class="social-link" target="_blank" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+            <svg viewBox="0 0 24 24"  fill="none" stroke="currentColor" stroke-width="2"
               stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <rect x="2" y="2"  rx="5" ry="5"></rect>
               <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
               <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
             </svg>
           </a>
           <a href="https://youtube.com/@ayancotton" class="social-link" target="_blank" aria-label="YouTube">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <svg viewBox="0 0 24 24"  fill="currentColor">
               <path
                 d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.108C19.522 3.5 12 3.5 12 3.5s-7.522 0-9.388.555A3.002 3.002 0 0 0 .502 6.163C0 8.03 0 12 0 12s0 3.97.502 5.837a3.003 3.003 0 0 0 2.11 2.108C4.478 20.5 12 20.5 12 20.5s7.522 0 9.388-.555a3.002 3.002 0 0 0 2.11-2.108C24 15.97 24 12 24 12s0-3.97-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
             </svg>
@@ -6667,7 +6699,7 @@ body.in-footer-section #scrollTop {
     </svg>
   </a>
   <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-    <svg class="progress-ring" width="50" height="50" viewBox="0 0 50 50">
+    <svg class="progress-ring"  viewBox="0 0 50 50">
       <circle class="progress-ring__circle-bg" cx="25" cy="25" r="23"></circle>
       <circle class="progress-ring__circle" cx="25" cy="25" r="23" stroke-dasharray="144.5" stroke-dashoffset="144.5">
       </circle>
