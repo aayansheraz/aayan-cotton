@@ -4629,6 +4629,75 @@ a.nav-cta::after {
   box-shadow: 0 4px 14px rgba(26, 107, 60, 0.12), inset 0 2px 4px rgba(0, 0, 0, 0.04) !important;
 }
 
+
+/* ==========================================================================
+   UIVERSE.IO ANIMATED ROTATING GRADIENT BORDER CARD (OUR JOURNEY)
+   From Uiverse.io by gharsh11032000 (Adapted for ACI Green Brand Theme)
+   ========================================================================== */
+
+.about-card {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 3px !important;
+  border-radius: 24px !important;
+  overflow: hidden !important;
+  line-height: 1.6 !important;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1) !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: 0 10px 30px rgba(26, 107, 60, 0.08) !important;
+}
+
+.about-card-content {
+  position: relative !important;
+  z-index: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  width: 100% !important;
+  padding: 36px 30px !important;
+  border-radius: 22px !important;
+  background: #ffffff !important;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1) !important;
+  box-shadow: inset 0 0 12px rgba(26, 107, 60, 0.03) !important;
+}
+
+.about-card::before {
+  content: "" !important;
+  position: absolute !important;
+  height: 180% !important;
+  width: 180% !important;
+  border-radius: inherit !important;
+  background: linear-gradient(135deg, #1a6b3c, #2d9b57, #4cba72, #00c853, #1a6b3c) !important;
+  transform-origin: center !important;
+  animation: moving 4.8s linear infinite paused !important;
+  transition: all 0.88s cubic-bezier(0.23, 1, 0.32, 1) !important;
+  z-index: 0 !important;
+}
+
+.about-card:hover::before {
+  animation-play-state: running !important;
+  width: 180% !important;
+}
+
+.about-card:hover {
+  box-shadow: 0 12px 32px rgba(26, 107, 60, 0.22),
+              0 24px 50px rgba(45, 155, 87, 0.16) !important;
+  transform: scale(1.03) translateY(-4px) !important;
+}
+
+@keyframes moving {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 </style>
   <link rel="preload" href="fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="fonts.css"></noscript>
@@ -4803,27 +4872,20 @@ a.nav-cta::after {
 
         </div>
         <div class="about-card">
-          <div class="about-badge">✓ 100% Organic</div>
-          <div class="about-card-icon">🌿</div>
-          <h3
-            style="font-family:'Playfair Display',serif;font-size:22px;color:var(--green-deep);font-weight:700;margin-bottom:10px;">
-            Our Journey</h3>
-          <p style="font-size:14px;color:#1a6b3c;line-height:1.7;">Began in 2000 as a vision held by the Dr. Muhammad
-            Asghar on the dusty stretches of Depalpur Road, Okara. Today, that dream has blossomed into a legacy of
-            healing. From our roots in the heart of Punjab, we have risen to become Pakistan’s premier exporter of
-            medical cotton, carrying a piece of our home’s dedication to the rest of the world."</p>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px;">
-            <div style="background:white;border-radius:12px;padding:16px;text-align:center;">
-              <div style="font-family:'Playfair Display',serif;font-size:28px;color:var(--green-deep);font-weight:700;">
-                2000</div>
-              <div style="font-size:11px;color:var(--text-light);text-transform:uppercase;letter-spacing:0.08em;">
-                Founded</div>
-            </div>
-            <div style="background:white;border-radius:12px;padding:16px;text-align:center;">
-              <div style="font-family:'Playfair Display',serif;font-size:28px;color:var(--green-deep);font-weight:700;">
-                ISO</div>
-              <div style="font-size:11px;color:var(--text-light);text-transform:uppercase;letter-spacing:0.08em;">
-                Certified</div>
+          <div class="about-card-content">
+            <div class="about-badge">✓ 100% Organic</div>
+            <div class="about-card-icon">🌿</div>
+            <h3 style="font-family:'Playfair Display',serif;font-size:24px;color:var(--green-deep);font-weight:700;margin-bottom:10px;">Our Journey</h3>
+            <p style="font-size:14.5px;color:#1a6b3c;line-height:1.75;">Began in 2000 as a vision held by Dr. Muhammad Asghar on the dusty stretches of Depalpur Road, Okara. Today, that dream has blossomed into a legacy of healing. From our roots in the heart of Punjab, we have risen to become Pakistan’s premier exporter of medical cotton, carrying a piece of our home’s dedication to the rest of the world.</p>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px;width:100%;">
+              <div style="background:var(--green-soft,#e8f8ef);border-radius:14px;padding:16px;text-align:center;border:1px solid var(--green-pale,#c8f0d8);">
+                <div style="font-family:'Playfair Display',serif;font-size:28px;color:var(--green-deep);font-weight:700;">2000</div>
+                <div style="font-size:11px;color:var(--text-light);text-transform:uppercase;letter-spacing:0.08em;">Founded</div>
+              </div>
+              <div style="background:var(--green-soft,#e8f8ef);border-radius:14px;padding:16px;text-align:center;border:1px solid var(--green-pale,#c8f0d8);">
+                <div style="font-family:'Playfair Display',serif;font-size:28px;color:var(--green-deep);font-weight:700;">ISO</div>
+                <div style="font-size:11px;color:var(--text-light);text-transform:uppercase;letter-spacing:0.08em;">Certified</div>
+              </div>
             </div>
           </div>
         </div>
